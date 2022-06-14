@@ -1,0 +1,111 @@
+import 'package:flutter/material.dart';
+import 'package:sejaltravels_2022/components/custom_textfield.dart';
+import 'package:sejaltravels_2022/const/const.dart';
+import 'package:sejaltravels_2022/driver/driverHome.dart';
+
+
+class SignInPage extends StatefulWidget {
+  const SignInPage({Key? key}) : super(key: key);
+
+  @override
+  _SignInPageState createState() => _SignInPageState();
+}
+
+class _SignInPageState extends State<SignInPage> {
+  final TextEditingController loginIdController= TextEditingController();
+  final TextEditingController passwordController=  TextEditingController();
+  bool isButtonEnabled = true;
+
+  final snackBar = SnackBar(
+    content: const Text('Email Id and Password Field Cannot be empty!!'),
+    action: SnackBarAction(
+      label: 'OK',
+      onPressed: () {
+        // Some code to undo the change.
+      },
+    ),
+  );
+
+  void singInFunction() {}
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: bgColor,
+      appBar: AppBar(
+        elevation: 0.0,
+        centerTitle: true,
+        title: Text("Sign In Page"),
+        backgroundColor: LableColor,
+      ),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text("SEJAL TRAVELS",style: TextStyle(fontSize: 28,color: LableColor,fontWeight: FontWeight.bold),),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: CustomTextField(
+              hintText: 'Login Id',
+              textEditingController: loginIdController,
+              borderColor: Colors.grey.shade800,
+              borderRadius: 5.0,
+              borderWidth: 2.0,
+              keyBoardType: TextInputType.text,
+              enableBorderWidth: 2,
+              isPassword: false,
+              onTapfunction: (){},
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            child: CustomTextField(
+              hintText: 'Password',
+              textEditingController: passwordController,
+              borderColor: Colors.grey.shade800,
+              borderRadius: 5.0,
+              borderWidth: 2.0,
+              keyBoardType: TextInputType.text,
+              onTapfunction: (){},
+              enableBorderWidth: 2.0,
+              isPassword: true,
+            ),
+          ),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: SizedBox(
+                  height: 55,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: LableColor,
+                    ),
+                    onPressed: () {
+                      if (loginIdController.text.isEmpty ||
+                          passwordController.text.isEmpty) {
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                      } else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DriverHome()));
+                      }
+                    },
+                    child: const Text(
+                      "LOGIN",
+                      style: TextStyle(fontSize: 18),
+                    ),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ],
+      ),
+
+
+    );
+
+  }
+}
