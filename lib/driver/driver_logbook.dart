@@ -6,6 +6,7 @@ import 'package:sejaltravels_2022/components/custom_components.dart';
 import 'package:sejaltravels_2022/components/custom_raised_button.dart';
 import 'package:sejaltravels_2022/components/custom_textfield.dart';
 import 'package:sejaltravels_2022/const/const.dart';
+import 'package:sejaltravels_2022/driver/calendar_example.dart';
 import 'package:sejaltravels_2022/driver/driver_mothLogbook_data.dart';
 
 class DriverLogbook extends StatefulWidget {
@@ -155,7 +156,7 @@ class _DriverLogbookState extends State<DriverLogbook> {
         ),
       );*/
       Navigator.push(context,
-          MaterialPageRoute(builder: (context) => DriverLogbookData()));
+          MaterialPageRoute(builder: (context) => CalendarExample()));
     } else {
       Navigator.push(context,
           MaterialPageRoute(builder: (context) => DriverLogbookData()));
@@ -435,7 +436,7 @@ class _DriverLogbookState extends State<DriverLogbook> {
                       style: ElevatedButton.styleFrom(
                         primary: LableColor
                       ),
-                  onPressed: () {},
+                  onPressed: submitFunction,
                   child: Text("SUBMIT",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22),),
                 )),
               )
