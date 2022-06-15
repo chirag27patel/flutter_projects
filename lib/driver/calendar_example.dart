@@ -47,7 +47,7 @@ class _CalendarExampleState extends State<CalendarExample> {
                 }
                 else{
                   totalKm = 0;
-                  print("Total Kilometer are not available here");
+
                 }
               });
             },
