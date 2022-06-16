@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sejaltravels_2022/components/custom_textfield.dart';
 import 'package:sejaltravels_2022/const/const.dart';
-import 'package:sejaltravels_2022/driver/driverHome.dart';
+import 'package:sejaltravels_2022/driver/driverBottombar.dart';
 
 
 class SignInPage extends StatefulWidget {
@@ -43,7 +43,7 @@ class _SignInPageState extends State<SignInPage> {
         children: [
           Text("SEJAL TRAVELS",style: TextStyle(fontSize: 28,color: LableColor,fontWeight: FontWeight.bold),),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: CustomTextField(
               hintText: 'Login Id',
               textEditingController: loginIdController,
@@ -57,7 +57,7 @@ class _SignInPageState extends State<SignInPage> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: CustomTextField(
               hintText: 'Password',
               textEditingController: passwordController,
@@ -74,7 +74,7 @@ class _SignInPageState extends State<SignInPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
                 child: SizedBox(
                   height: 55,
                   child: ElevatedButton(
@@ -89,12 +89,12 @@ class _SignInPageState extends State<SignInPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DriverHome()));
+                                builder: (context) => DriverBottomBarHome()));
                       }
                     },
                     child: const Text(
-                      "LOGIN",
-                      style: TextStyle(fontSize: 18),
+                      "Sing In",
+                      style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

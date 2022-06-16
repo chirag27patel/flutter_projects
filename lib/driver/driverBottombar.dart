@@ -3,17 +3,18 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 import 'package:sejaltravels_2022/driver/driver_diesel_data.dart';
+import 'package:sejaltravels_2022/driver/driver_home.dart';
 import 'package:sejaltravels_2022/driver/driver_logbook.dart';
 
 
-class DriverHome extends StatefulWidget {
-  const DriverHome({Key? key}) : super(key: key);
+class DriverBottomBarHome extends StatefulWidget {
+  const DriverBottomBarHome({Key? key}) : super(key: key);
 
   @override
-  _DriverHomeState createState() => _DriverHomeState();
+  _DriverBottomBarHomeState createState() => _DriverBottomBarHomeState();
 }
 
-class _DriverHomeState extends State<DriverHome> {
+class _DriverBottomBarHomeState extends State<DriverBottomBarHome> {
   int _selectedIndex = 0;
   double fontsize = 14.0;
 
@@ -78,7 +79,7 @@ class _DriverHomeState extends State<DriverHome> {
   ];
 
   static const List<Widget> _pages = [
-    DriverDiesel(),
+    DirverHome(),
     DriverTrips(),
     DriverLogbook(),
     DriverDiesel(),
