@@ -15,18 +15,22 @@ class _DirverHomeState extends State<DirverHome> {
       body: Column(
         children: [
           Container(
-            padding: EdgeInsets.symmetric(vertical: 10, horizontal: 5),
+            height: 150,
+            width: 150,
+            margin: EdgeInsets.only(top: 10),
+            decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                    image: NetworkImage(
+                        "https://scontent.fstv3-1.fna.fbcdn.net/v/t1.6435-9/131121279_3627834227255377_3270597907143300078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_ohc=QLQSjH0TrPcAX9Vp7Vz&_nc_ht=scontent.fstv3-1.fna&oh=00_AT_GNBjANwimfeCg0G31HpOE6Efu7KK0KI-UCBhO7YXR_Q&oe=62D1BC2A"))),
+          ),
+          Container(
+            padding: EdgeInsets.only(left: 10, right: 10, bottom: 10, top: 10),
             margin: EdgeInsets.symmetric(vertical: 10, horizontal: 16),
             decoration: BoxDecoration(
-                gradient:const LinearGradient(
-                  colors: [
-                    unselectedIconColor,
-                    LableColor,
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                ),
-                borderRadius: BorderRadius.circular(5.0)),
+              color: LableColor,
+            ),
             child: Column(
               children: [
                 DriverHomeLabels(
@@ -72,11 +76,10 @@ class DriverHomeLabels extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
       child: Row(
         children: [
           Expanded(
-
             child: Text(
               driverHomelabel,
               style: TextStyle(fontSize: 18, color: Colors.white),
