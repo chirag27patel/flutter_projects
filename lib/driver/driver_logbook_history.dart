@@ -5,14 +5,14 @@ import 'package:sejaltravels_2022/const/const.dart';
 import 'package:sejaltravels_2022/driver/driver_mothLogbook_data.dart';
 import 'package:table_calendar/table_calendar.dart';
 
-class CalendarExample extends StatefulWidget {
-  const CalendarExample({Key? key}) : super(key: key);
+class DriverLogbookHistory extends StatefulWidget {
+  const DriverLogbookHistory({Key? key}) : super(key: key);
 
   @override
-  State<CalendarExample> createState() => _CalendarExampleState();
+  State<DriverLogbookHistory> createState() => _DriverLogbookHistoryState();
 }
 
-class _CalendarExampleState extends State<CalendarExample> {
+class _DriverLogbookHistoryState extends State<DriverLogbookHistory> {
   DateTime _selectedDay = DateTime.now();
   DateTime _focusedDay = DateTime.now();
 
@@ -37,7 +37,12 @@ class _CalendarExampleState extends State<CalendarExample> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: LableColor,
+        elevation: 0.0,
+        centerTitle: true,
+        title: const Text("Logbook Histoy"),
+      ),
       body: Column(
         children: [
           TableCalendar(
