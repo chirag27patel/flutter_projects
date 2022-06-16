@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:intl/intl.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 import 'package:sejaltravels_2022/driver/driver_mothLogbook_data.dart';
 import 'package:table_calendar/table_calendar.dart';
@@ -15,9 +16,15 @@ class _CalendarExampleState extends State<CalendarExample> {
   DateTime _selectedDay = DateTime.now();
   DateTime _focusedDay = DateTime.now();
 
+
+
   int startingKm = 12546;
   int endingKm = 12610;
   int totalKm = 0;
+  String startingDate = "-";
+  String endingDate = "-";
+  String startingTime = "-";
+  String endingTime = "-";
 
 
   CalendarFormat format = CalendarFormat.month;
@@ -44,10 +51,18 @@ class _CalendarExampleState extends State<CalendarExample> {
                 _focusedDay = focusedDay; // update `_focusedDay` here as well
                 if (_selectedDay.day == DateTime.now().day){
                   totalKm = endingKm - startingKm;
+                  startingDate = DateFormat.yMMMMd('en_US').format(_selectedDay);
+                  endingDate = DateFormat.yMMMMd('en_US').format(_selectedDay);
+                  startingTime = "08:00 AM";
+                  endingTime = "08:00 PM";
+
                 }
                 else{
                   totalKm = 0;
-
+                  startingDate = "0";
+                  endingDate = "0";
+                  startingTime = "0";
+                  endingTime = "0";
                 }
               });
             },
@@ -82,15 +97,15 @@ class _CalendarExampleState extends State<CalendarExample> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        HistoryLabels(label: "Starting Date", labelDetails: "12-Jul-2022",labelColor: unselectedIconColor),
-                        HistoryLabels(label: "Ending Date", labelDetails: "12-Jul-2022",labelColor: unselectedIconColor),
+                        HistoryLabels(label: "Starting Date", labelDetails: startingDate,labelColor: unselectedIconColor),
+                        HistoryLabels(label: "Ending Date", labelDetails: endingDate,labelColor: unselectedIconColor),
                       ],
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        HistoryLabels(label: "Starting Time", labelDetails: "08:00 AM",labelColor: unselectedIconColor),
-                        HistoryLabels(label: "Ending Time", labelDetails: "08:00 PM",labelColor: unselectedIconColor,),
+                        HistoryLabels(label: "Starting Time", labelDetails: startingTime,labelColor: unselectedIconColor),
+                        HistoryLabels(label: "Ending Time", labelDetails: endingTime,labelColor: unselectedIconColor,),
                       ],
                     ),
                     Row(
