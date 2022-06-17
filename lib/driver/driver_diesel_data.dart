@@ -14,6 +14,12 @@ class _DriverDieselState extends State<DriverDiesel> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
+      appBar: AppBar(
+        elevation: 0.0,
+        backgroundColor: LableColor,
+        centerTitle: true,
+        title: Text("Diesel Charges"),
+      ),
       body: ListView.builder(
           itemCount: 4,
           padding: EdgeInsets.only(top: 10),

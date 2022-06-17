@@ -176,6 +176,12 @@ class _DriverLogbookState extends State<DriverLogbook> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text("Logbook Entry"),
+        backgroundColor: LableColor,
+        elevation: 0.0,
+      ),
       body: ListView(
         children: [
           Column(

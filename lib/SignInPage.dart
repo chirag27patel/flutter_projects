@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sejaltravels_2022/components/custom_textfield.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 import 'package:sejaltravels_2022/driver/driverBottombar.dart';
+import 'package:sejaltravels_2022/driver/driver_home.dart';
 
 
 class SignInPage extends StatefulWidget {
@@ -89,7 +90,7 @@ class _SignInPageState extends State<SignInPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DriverBottomBarHome()));
+                                builder: (context) => DirverHome()));
                       }
                     },
                     child: const Text(

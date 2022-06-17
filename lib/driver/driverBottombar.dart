@@ -2,144 +2,41 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/const/const.dart';
-import 'package:sejaltravels_2022/driver/driver_diesel_data.dart';
-import 'package:sejaltravels_2022/driver/driver_home.dart';
-import 'package:sejaltravels_2022/driver/driver_logbook.dart';
 
-
-class DriverBottomBarHome extends StatefulWidget {
-  const DriverBottomBarHome({Key? key}) : super(key: key);
+class DriverTrips extends StatefulWidget {
+  const DriverTrips({Key? key}) : super(key: key);
 
   @override
-  _DriverBottomBarHomeState createState() => _DriverBottomBarHomeState();
+  _DriverTripsState createState() => _DriverTripsState();
 }
 
-class _DriverBottomBarHomeState extends State<DriverBottomBarHome> {
-  int _selectedIndex = 0;
+class _DriverTripsState extends State<DriverTrips> {
   double fontsize = 14.0;
-
-
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
-
-  List<BottomNavigationBarItem> BottomNavigationItem = [
-    const BottomNavigationBarItem(
-
-      icon: Icon(
-        Icons.home,
-
-        color: unselectedIconColor,
-      ),
-      activeIcon: Icon(
-        Icons.home,
-        color: Colors.white,
-      ),
-      label: 'Home',
-
-    ),
-    const BottomNavigationBarItem(
-      icon: Icon(
-        Icons.history,
-        color: unselectedIconColor,
-
-      ),
-      activeIcon: Icon(
-        Icons.history,
-        color: Colors.white,
-      ),
-      label: 'History',
-    ),
-    const BottomNavigationBarItem(
-      icon: Icon(
-        Icons.book,
-        color: unselectedIconColor,
-
-      ),
-      activeIcon: Icon(
-        Icons.book,
-        color: Colors.white,
-      ),
-      label: 'Logbook',
-    ),
-    const BottomNavigationBarItem(
-      icon: Icon(
-        Icons.local_gas_station,
-        color: unselectedIconColor,
-
-      ),
-      activeIcon: Icon(
-        Icons.local_gas_station,
-        color: Colors.white,
-      ),
-      label: 'Diesel',
-    ),
-  ];
-
-  static const List<Widget> _pages = [
-    DirverHome(),
-    DriverTrips(),
-    DriverLogbook(),
-    DriverDiesel(),
-
-  ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: bgColor,
-      bottomNavigationBar: BottomNavigationBar(
-        items: BottomNavigationItem,
-        backgroundColor: LableColor,
-        onTap: _onItemTapped,
-        type: BottomNavigationBarType.fixed,
-        showSelectedLabels: true,
-        selectedItemColor: Colors.white,
-        unselectedItemColor:unselectedIconColor,
-        currentIndex: _selectedIndex,
-        iconSize: 26,
-        showUnselectedLabels: true,
-        selectedFontSize: fontsize,
-        unselectedFontSize: fontsize,
-        selectedLabelStyle: const TextStyle(color: Colors.indigoAccent,fontSize: 18),
-
-
-      ),
       appBar: AppBar(
         title: const Text("Home"),
         backgroundColor: LableColor,
         centerTitle: true,
         elevation: 0.0,
       ),
-      body: Center(
-        child: _pages.elementAt(_selectedIndex),
-      ),
+      body: ListView.builder(
+          itemCount: 5,
+          padding: const EdgeInsets.all(8.0),
+          itemBuilder: (index, context) {
+            return DriverHomeList(
+              carType: "Swift",
+              destination: "Mumbai Airport",
+              rate: "14 rs",
+              tripType: "One way",
+            );
+          }),
     );
   }
 }
-
-class DriverTrips extends StatelessWidget {
-  const DriverTrips({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: 5,
-        padding: const EdgeInsets.all(8.0),
-        itemBuilder: (index, context) {
-          return DriverHomeList(
-            carType: "Swift",
-            destination: "Mumbai Airport",
-            rate: "14 rs",
-            tripType: "One way",
-          );
-        });
-  }
-}
-
-
 
 //list design
 class DriverHomeList extends StatelessWidget {
@@ -178,7 +75,7 @@ class DriverHomeList extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Icon(FontAwesomeIcons.car,
-                      size: 35, color: unselectedIconColor),
+                      size: 35, color: LableColor),
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
                     child: Text(
@@ -186,12 +83,12 @@ class DriverHomeList extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: unselectedIconColor),
+                          color: LableColor),
                     ),
                   ),
                   Column(
                     children: const [
-                       Text(
+                      Text(
                         "Final cost",
                         style: TextStyle(
                             fontSize: 16,
@@ -199,13 +96,13 @@ class DriverHomeList extends StatelessWidget {
                             color: Colors.grey),
                       ),
                       Padding(
-                        padding:  EdgeInsets.only(top: 8.0),
+                        padding: EdgeInsets.only(top: 8.0),
                         child: Text(
                           "5000",
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: unselectedIconColor),
+                              color: LableColor),
                         ),
                       ),
                     ],
@@ -214,18 +111,26 @@ class DriverHomeList extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            height: 0.5,
-            width: double.infinity,
-            color: Colors.grey,
-            margin: const EdgeInsets.only(bottom: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              DottedLine(
+                dashLength: 10,
+                dashGapLength: 2,
+                lineThickness: 2,
+                direction: Axis.horizontal,
+                dashColor: LableColor,
+                dashGapColor: Colors.white,
+                lineLength: MediaQuery.of(context).size.width/1.2,
+              ),
+            ],
           ),
           Padding(
             padding: const EdgeInsets.all(10),
             child: Row(
               children: [
                 const Icon(FontAwesomeIcons.locationDot,
-                    size: 18, color: unselectedIconColor),
+                    size: 18, color: LableColor),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.only(left: 15),
@@ -234,7 +139,7 @@ class DriverHomeList extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: unselectedIconColor),
+                          color: LableColor),
                     ),
                   ),
                 ),
@@ -254,7 +159,7 @@ class DriverHomeList extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Padding(
+               Padding(
                 padding: const EdgeInsets.only(left: 18.0),
                 child: DottedLine(
                   dashLength: 10,
@@ -274,7 +179,7 @@ class DriverHomeList extends StatelessWidget {
             child: Row(
               children: [
                 Icon(FontAwesomeIcons.locationDot,
-                    size: 18, color: unselectedIconColor),
+                    size: 18, color: LableColor),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.only(left: 15),
@@ -283,7 +188,7 @@ class DriverHomeList extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: unselectedIconColor),
+                          color: LableColor),
                     ),
                   ),
                 ),
