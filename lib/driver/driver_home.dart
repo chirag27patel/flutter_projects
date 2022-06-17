@@ -39,6 +39,28 @@ class _DirverHomeState extends State<DirverHome> {
               ],
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Row(
+              children: [
+                Expanded(
+                    child: DriverHomeLabels2(
+                      imagePath: "assets/images/car.png",
+                      tabColor: Colors.blueAccent,
+                      tabName: 'Profile',
+                    )),
+                Container(
+                  width: 8,
+                ),
+                Expanded(
+                    child: DriverHomeLabels2(
+                      imagePath: "assets/images/car.png",
+                      tabColor: Colors.redAccent,
+                      tabName: 'Profile',
+                    )),
+              ],
+            ),
+          ),
         ],
       ),
     );
