@@ -39,7 +39,7 @@ class _DirverHomeState extends State<DirverHome> {
             style: TextStyle(
                 fontSize: 26, fontWeight: FontWeight.bold, color: LableColor),
           ),
-          Container(
+          /*Container(
             margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
             child: Column(
               children: [
@@ -117,7 +117,8 @@ class _DirverHomeState extends State<DirverHome> {
 
               ],
             ),
-          ),
+          ),*/
+          DriverHomeLabels2(),
         ],
       ),
     );
@@ -166,6 +167,34 @@ class DriverHomeLabels extends StatelessWidget {
                       color: LableColor),
                 ),
               ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class DriverHomeLabels2 extends StatelessWidget {
+  const DriverHomeLabels2({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      child: Expanded(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            InkWell(
+              onTap: (){},
+              child: Container(
+                child: Column(
+                  children: [
+                    Icon(FontAwesomeIcons.car,size: 28),
+                    Text("Lable Name",style: TextStyle(fontSize: 18),)
+                  ],
+                ),
+              ),
             ),
           ],
         ),
