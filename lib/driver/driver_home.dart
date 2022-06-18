@@ -5,6 +5,7 @@ import 'package:sejaltravels_2022/driver/driverBottombar.dart';
 import 'package:sejaltravels_2022/driver/driver_diesel_data.dart';
 import 'package:sejaltravels_2022/driver/driver_logbook.dart';
 import 'package:sejaltravels_2022/driver/driver_logbook_history.dart';
+import 'package:sejaltravels_2022/driver/driver_profile.dart';
 
 class DirverHome extends StatefulWidget {
   const DirverHome({Key? key}) : super(key: key);
@@ -33,14 +34,14 @@ class _DirverHomeState extends State<DirverHome> {
               children: [
                 Expanded(
                     child: DriverHomeLabels2(
-                  imagePath: "assets/images/car.png",
-                  tabColor: Color(0xfff1c40f),
+                  imagePath: "assets/images/user.png",
+                  tabColor: Color(0xffff793f),
                   tabName: 'Profile',
                   tabFunction: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DriverLogbook()));
+                            builder: (context) => DriverProfile()));
                   },
                 )),
                 Expanded(

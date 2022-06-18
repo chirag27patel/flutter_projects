@@ -67,8 +67,9 @@ class DriverHomeLabels extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
+      padding: const EdgeInsets.only(right: 5,top: 10,bottom: 10,left: 20),
       child: Container(
+        width: 170,
         child: Row(
           children: [
             Padding(
@@ -106,82 +107,3 @@ class DriverHomeLabels extends StatelessWidget {
 }
 
 
-/*Container(
-            margin: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-            child: Column(
-              children: [
-                Row(
-
-                  children: [
-                    Expanded(
-                      child: DriverHomeLabels(
-                        driverHomelabel: "Car Number",
-                        driverHomeLabelDetails: "GJ-05-GF-8884",
-                        iconData: FontAwesomeIcons.carOn,
-                      ),
-                    ),
-
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          DriverHomeLabels(
-                            driverHomelabel: "Owner Name",
-                            driverHomeLabelDetails: "Chirag Patel",
-                            iconData: Icons.person,
-                          ),
-                        ],
-
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-
-                  children: [
-                    Expanded(
-                      child: DriverHomeLabels(
-                        driverHomelabel: "Car Type",
-                        driverHomeLabelDetails: "Innova Crysta",
-                        iconData: FontAwesomeIcons.carRear,
-                      ),
-                    ),
-
-
-                    Expanded(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          DriverHomeLabels(
-                            driverHomelabel: "Driver Name",
-                            driverHomeLabelDetails: "Chirag Patel",
-                            iconData: FontAwesomeIcons.users,
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-                Row(
-
-                  children: [
-                    Expanded(
-                      child: DriverHomeLabels(
-                        driverHomelabel: "Duty Type",
-                        driverHomeLabelDetails: "Monthly",
-                        iconData: FontAwesomeIcons.book,
-                      ),
-                    ),
-                    Expanded(
-                      child: DriverHomeLabels(
-                        driverHomelabel: "Department",
-                        driverHomeLabelDetails: "C.S",
-                        iconData: FontAwesomeIcons.buildingUser,
-                      ),
-                    ),
-                  ],
-                ),
-
-              ],
-            ),
-          ),*/
