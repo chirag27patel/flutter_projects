@@ -59,25 +59,18 @@ class DriverHomeLabels extends StatelessWidget {
 
   DriverHomeLabels(
       {required this.driverHomelabel,
-        required this.driverHomeLabelDetails,
-        required this.iconData});
+      required this.driverHomeLabelDetails,
+      required this.iconData});
 
   IconData iconData;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 5,top: 10,bottom: 10,left: 20),
+      padding: const EdgeInsets.only(right: 5, top: 10, bottom: 10, left: 20),
       child: Container(
-        width: 170,
         child: Row(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(
-                right: 15,
-              ),
-              child: Icon(iconData),
-            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -85,7 +78,7 @@ class DriverHomeLabels extends StatelessWidget {
                   driverHomelabel,
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 12,
                       fontWeight: FontWeight.bold,
                       color: textColor),
                 ),
@@ -93,9 +86,10 @@ class DriverHomeLabels extends StatelessWidget {
                   driverHomeLabelDetails,
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                      fontSize: 18,
-                      fontWeight: FontWeight.bold,
-                      color: LableColor),
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: LableColor,
+                  ),
                 ),
               ],
             ),
@@ -106,4 +100,43 @@ class DriverHomeLabels extends StatelessWidget {
   }
 }
 
+class DriverHomeLabels2 extends StatelessWidget {
+  String driverHomelabel;
+  String driverHomeLabelDetails;
 
+  DriverHomeLabels2(
+      {required this.driverHomelabel,
+      required this.driverHomeLabelDetails,
+      required this.iconData});
+
+  IconData iconData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(right: 10, top: 10, bottom: 10, left: 10),
+      child: Container(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              driverHomelabel,
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                  fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
+            ),
+            Text(
+              driverHomeLabelDetails,
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+                color: LableColor,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
