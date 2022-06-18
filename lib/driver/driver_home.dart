@@ -7,14 +7,14 @@ import 'package:sejaltravels_2022/driver/driver_logbook.dart';
 import 'package:sejaltravels_2022/driver/driver_logbook_history.dart';
 import 'package:sejaltravels_2022/driver/driver_profile.dart';
 
-class DirverHome extends StatefulWidget {
-  const DirverHome({Key? key}) : super(key: key);
+class DriverHome extends StatefulWidget {
+  const DriverHome({Key? key}) : super(key: key);
 
   @override
-  State<DirverHome> createState() => _DirverHomeState();
+  State<DriverHome> createState() => _DriverHomeState();
 }
 
-class _DirverHomeState extends State<DirverHome> {
+class _DriverHomeState extends State<DriverHome> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

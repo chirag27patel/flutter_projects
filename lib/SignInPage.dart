@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sejaltravels_2022/admin/admin_home.dart';
 import 'package:sejaltravels_2022/components/custom_textfield.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 import 'package:sejaltravels_2022/driver/driverBottombar.dart';
@@ -86,11 +87,17 @@ class _SignInPageState extends State<SignInPage> {
                       if (loginIdController.text.isEmpty ||
                           passwordController.text.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      } else {
+                      } else if(loginIdController.text == "admin" ||
+                          passwordController.text == "admin") {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DirverHome()));
+                                builder: (context) => AdminHome()));
+                      }else{
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DriverHome()));
                       }
                     },
                     child: const Text(
