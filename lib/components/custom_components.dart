@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
 class Totals extends StatelessWidget {
@@ -119,11 +120,20 @@ class DriverHomeLabels2 extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(
-              driverHomelabel,
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                  fontSize: 16, fontWeight: FontWeight.bold, color: textColor),
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: Icon(iconData, size: 20, color: textColor,),
+                ),
+                Text(
+                  driverHomelabel,
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                      fontSize: 16,  color: textColor),
+                ),
+              ],
             ),
             Text(
               driverHomeLabelDetails,

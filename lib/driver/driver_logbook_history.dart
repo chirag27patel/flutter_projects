@@ -50,6 +50,7 @@ class _DriverLogbookHistoryState extends State<DriverLogbookHistory> {
             lastDay: DateTime.utc(2030, 3, 14),
             calendarFormat: format,
             focusedDay: _selectedDay,
+
             onDaySelected: (selectedDay, focusedDay) {
               setState(() {
                 _selectedDay = selectedDay;

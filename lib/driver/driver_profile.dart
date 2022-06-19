@@ -28,7 +28,7 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 750),
+      duration: Duration(milliseconds: 2000),
     );
 
     _animation = CurvedAnimation(parent: _animationController, curve: Curves.elasticOut);
@@ -58,141 +58,141 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
         elevation: 0.0,
         backgroundColor: LableColor,
       ),
-      body: Column(
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                height: 120,
-                width: 120,
-                margin: EdgeInsets.all(10.0),
-                decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(color: Colors.black54, blurRadius: 10)
-                    ],
-                    shape: BoxShape.circle,
-                    image: DecorationImage(image: NetworkImage(imageUrl))),
-              ),
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                DriverHomeLabels(
-                  driverHomelabel: "Owner Name",
-                  driverHomeLabelDetails: "Chirag Patel",
-                  iconData: Icons.person,
-                ),
-                DriverHomeLabels(
-                  driverHomelabel: "Driver Name",
-                  driverHomeLabelDetails: "Chandresh Saddiwala",
-                  iconData: FontAwesomeIcons.users,
-                ),
-              ]),
-            ],
-          ),
-          Container(
-            margin: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
-            child: Column(
+      body: Container(
+        margin: EdgeInsets.all(_animation.value*16.0),
+        child: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                Column(
-                  children: [
-                    DriverHomeLabels2(
-                      driverHomelabel: "Car Number",
-                      driverHomeLabelDetails: "GJ-05-GF-8884",
-                      iconData: FontAwesomeIcons.carOn,
-                    ),
-                    DriverHomeLabels2(
-                      driverHomelabel: "Car Type",
-                      driverHomeLabelDetails: "Innova Crysta",
-                      iconData: FontAwesomeIcons.carRear,
-                    ),
-                    DriverHomeLabels2(
-                      driverHomelabel: "Duty Type",
-                      driverHomeLabelDetails: "Monthly",
-                      iconData: FontAwesomeIcons.book,
-                    ),
-                    DriverHomeLabels2(
-                      driverHomelabel: "Department",
-                      driverHomeLabelDetails: "C.S",
-                      iconData: FontAwesomeIcons.buildingUser,
-                    )
-                  ],
+                Container(
+                  height: 120,
+                  width: 120,
+                  margin: EdgeInsets.all(10.0),
+                  decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      image: DecorationImage(image: NetworkImage(imageUrl))),
                 ),
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+                  DriverHomeLabels(
+                    driverHomelabel: "Owner Name",
+                    driverHomeLabelDetails: "Chirag Patel",
+                    iconData: Icons.person,
+                  ),
+                  DriverHomeLabels(
+                    driverHomelabel: "Driver Name",
+                    driverHomeLabelDetails: "Chandresh Saddiwala",
+                    iconData: FontAwesomeIcons.users,
+                  ),
+                ]),
               ],
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Material(
-              borderRadius: BorderRadius.circular(5.0),
-              child: InkWell(
-                onTap: () {},
-                child: Container(
-                  height: 45,
-                  decoration: BoxDecoration(
-                      border: Border.all(
-                        color: LableColor,
-                        width: 2,
-                      ),
-                      borderRadius: BorderRadius.circular(5.0)),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+            Container(
+              margin: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+              child: Column(
+                children: [
+                  Column(
                     children: [
-                      Text(
-                        "Edit Details".toUpperCase(),
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: LableColor,
-                            fontWeight: FontWeight.bold),
+                      DriverHomeLabels2(
+                        driverHomelabel: "Car Number",
+                        driverHomeLabelDetails: "GJ-05-GF-8884",
+                        iconData: FontAwesomeIcons.moneyCheck,
                       ),
-                      Container(
-                        width: 20,
+                      DriverHomeLabels2(
+                        driverHomelabel: "Car Type",
+                        driverHomeLabelDetails: "Innova Crysta",
+                        iconData: FontAwesomeIcons.car,
                       ),
-                      Icon(
-                        FontAwesomeIcons.pen,
-                        color: LableColor,
-                        size: 16,
+                      DriverHomeLabels2(
+                        driverHomelabel: "Duty Type",
+                        driverHomeLabelDetails: "Monthly",
+                        iconData: FontAwesomeIcons.bookOpen,
                       ),
+                      DriverHomeLabels2(
+                        driverHomelabel: "Department",
+                        driverHomeLabelDetails: "C.S",
+                        iconData: FontAwesomeIcons.buildingUser,
+                      )
                     ],
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 10,left: 10,top: 20),
+              child: Material(
+                borderRadius: BorderRadius.circular(5.0),
+                child: InkWell(
+                  onTap: () {},
+                  child: Container(
+                    height: 45,
+                    decoration: BoxDecoration(
+                        border: Border.all(
+                          color: LableColor,
+                          width: 2,
+                        ),
+                        borderRadius: BorderRadius.circular(5.0)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Edit Details".toUpperCase(),
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: LableColor,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Container(
+                          width: 20,
+                        ),
+                        Icon(
+                          FontAwesomeIcons.pen,
+                          color: LableColor,
+                          size: 16,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            child: Material(
-              color: LableColor,
-              borderRadius: BorderRadius.circular(5.0),
-              child: InkWell(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DriverCarDocumentList()));
-                },
-                child: Container(
-                  height: 45,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "Upload Documents".toUpperCase(),
-                        style: TextStyle(
-                            fontSize: 14,
-                            color: Colors.white,
-                            fontWeight: FontWeight.bold),
-                      ),
-                      Container(
-                        width: 20,
-                      ),
-                      Icon(
-                        FontAwesomeIcons.fileCircleCheck,
-                        color: Colors.white,
-                        size: 16,
-                      ),
-                    ],
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+              child: Material(
+                color: LableColor,
+                borderRadius: BorderRadius.circular(5.0),
+                child: InkWell(
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=>DriverCarDocumentList()));
+                  },
+                  child: Container(
+                    height: 45,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Upload Documents".toUpperCase(),
+                          style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold),
+                        ),
+                        Container(
+                          width: 20,
+                        ),
+                        Icon(
+                          FontAwesomeIcons.fileCircleCheck,
+                          color: Colors.white,
+                          size: 16,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-            ),
-          )
-        ],
+            )
+          ],
+        ),
       ),
     );
   }
