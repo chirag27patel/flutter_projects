@@ -16,8 +16,8 @@ class DriverHome extends StatefulWidget {
 
 class _DriverHomeState extends State<DriverHome>
     with SingleTickerProviderStateMixin {
-  late Animation animation;
-  late AnimationController controller;
+   late Animation animation;
+   late AnimationController controller;
 
   @override
   void initState() {
@@ -26,11 +26,15 @@ class _DriverHomeState extends State<DriverHome>
 
     controller = AnimationController(
       vsync: this,
-      duration: Duration(seconds: 2),
+      duration: Duration(milliseconds: 1500),
     );
 
-    animation = CurvedAnimation(parent: controller, curve: Curves.bounceInOut);
+    animation = CurvedAnimation(parent: controller, curve: Curves.bounceOut);
     controller.forward();
+
+    animation.addListener(() {
+      setState((){});
+    });
   }
 
   @override
@@ -47,7 +51,7 @@ class _DriverHomeState extends State<DriverHome>
         child: Column(
           children: [
             Container(
-              margin: EdgeInsets.all(5),
+              margin: EdgeInsets.all(animation.value*5),
               child: Column(
                 children: [
                   Row(
@@ -144,11 +148,7 @@ class _DriverHomeState extends State<DriverHome>
                 ],
               ),
             ),
-            Container(
-              height: 120,
-              width: animation.value * 120,
-              color: Colors.deepOrangeAccent,
-            ),
+
           ],
         ),
       ),
@@ -172,10 +172,12 @@ class DriverHomeLabels2 extends StatelessWidget {
   Color tabColor;
   double tabHeight;
 
+
   @override
   Widget build(BuildContext context) {
     return Container(
       height: tabHeight,
+
       margin: EdgeInsets.only(left: 5, right: 5, top: 5, bottom: 5),
       child: Material(
         color: tabColor,

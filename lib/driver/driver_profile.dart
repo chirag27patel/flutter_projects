@@ -17,8 +17,8 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
   String imageUrl =
       "https://scontent.fstv3-1.fna.fbcdn.net/v/t1.6435-9/131121279_3627834227255377_3270597907143300078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_ohc=QLQSjH0TrPcAX9F78Bl&_nc_ht=scontent.fstv3-1.fna&oh=00_AT-m_A0Q2feFnmYBvitmLrMEn7itGa8A_ZGgO-PfoOuG4g&oe=62D1BC2A";
 
-  late final Animation _animation;
-  late final AnimationController _animationController;
+   late Animation _animation;
+   late AnimationController _animationController;
 
 
   @override
@@ -31,11 +31,12 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
       duration: Duration(milliseconds: 750),
     );
 
-    _animation = CurvedAnimation(parent: _animationController, curve: Curves.bounceInOut);
+    _animation = CurvedAnimation(parent: _animationController, curve: Curves.elasticOut);
     _animationController.forward();
 
     _animation.addListener(() {
-      print(_animation.value);
+      setState((){});
+
     });
   }
 
@@ -63,8 +64,8 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                height: _animation.value*120,
-                width: _animation.value*120,
+                height: 120,
+                width: 120,
                 margin: EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
                     boxShadow: [
