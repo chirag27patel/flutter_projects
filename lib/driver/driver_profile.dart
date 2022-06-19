@@ -7,13 +7,46 @@ import 'package:sejaltravels_2022/driver/driver_car_document_list.dart';
 class DriverProfile extends StatefulWidget {
   const DriverProfile({Key? key}) : super(key: key);
 
+
+
   @override
   State<DriverProfile> createState() => _DriverProfileState();
 }
 
-class _DriverProfileState extends State<DriverProfile> {
+class _DriverProfileState extends State<DriverProfile> with SingleTickerProviderStateMixin{
   String imageUrl =
       "https://scontent.fstv3-1.fna.fbcdn.net/v/t1.6435-9/131121279_3627834227255377_3270597907143300078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_ohc=QLQSjH0TrPcAX9F78Bl&_nc_ht=scontent.fstv3-1.fna&oh=00_AT-m_A0Q2feFnmYBvitmLrMEn7itGa8A_ZGgO-PfoOuG4g&oe=62D1BC2A";
+
+  late final Animation _animation;
+  late final AnimationController _animationController;
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    _animationController = AnimationController(
+      vsync: this,
+      duration: Duration(milliseconds: 750),
+    );
+
+    _animation = CurvedAnimation(parent: _animationController, curve: Curves.bounceInOut);
+    _animationController.forward();
+
+    _animation.addListener(() {
+      print(_animation.value);
+    });
+  }
+
+
+
+
+  @override
+  void dispose() {
+    _animationController.dispose(); // you need this
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +63,8 @@ class _DriverProfileState extends State<DriverProfile> {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Container(
-                height: 120,
-                width: 120,
+                height: _animation.value*120,
+                width: _animation.value*120,
                 margin: EdgeInsets.all(10.0),
                 decoration: BoxDecoration(
                     boxShadow: [

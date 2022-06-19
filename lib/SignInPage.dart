@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sejaltravels_2022/admin/admin_home.dart';
 import 'package:sejaltravels_2022/components/custom_textfield.dart';
 import 'package:sejaltravels_2022/const/const.dart';
-import 'package:sejaltravels_2022/driver/driverBottombar.dart';
+import 'package:sejaltravels_2022/driver/driverTrips.dart';
 import 'package:sejaltravels_2022/driver/driver_home.dart';
 
 
