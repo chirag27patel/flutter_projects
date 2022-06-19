@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 import 'package:sejaltravels_2022/driver/driverTrips.dart';
+import 'package:sejaltravels_2022/driver/driver_car_document_list.dart';
 import 'package:sejaltravels_2022/driver/driver_diesel_data.dart';
 import 'package:sejaltravels_2022/driver/driver_logbook.dart';
 import 'package:sejaltravels_2022/driver/driver_logbook_history.dart';
@@ -60,7 +61,7 @@ class _DriverHomeState extends State<DriverHome>
                           child: DriverHomeLabels2(
                         imagePath: "assets/images/user.png",
                         tabHeight: 120,
-                        tabColor: Color(0xffff793f),
+                        tabColor: Colors.blueAccent.shade100,
                         tabName: 'Profile',
                         tabFunction: () {
                           Navigator.push(
@@ -73,7 +74,7 @@ class _DriverHomeState extends State<DriverHome>
                           child: DriverHomeLabels2(
                         imagePath: "assets/images/log.png",
                         tabHeight: 120,
-                        tabColor: Color(0xffe67e22),
+                        tabColor: Colors.red.shade300,
                         tabName: 'Logbook',
                         tabFunction: () {
                           Navigator.push(
@@ -90,7 +91,7 @@ class _DriverHomeState extends State<DriverHome>
                           child: DriverHomeLabels2(
                         imagePath: "assets/images/fuel.png",
                         tabHeight: 120,
-                        tabColor: Color(0xff2980b9),
+                        tabColor: Colors.blueGrey.shade400,
                         tabName: 'Diesel',
                         tabFunction: () {
                           Navigator.push(
@@ -120,7 +121,7 @@ class _DriverHomeState extends State<DriverHome>
                           child: DriverHomeLabels2(
                         imagePath: "assets/images/clock.png",
                         tabHeight: 120,
-                        tabColor: Color(0xff27ae60),
+                        tabColor: Colors.orange.shade400,
                         tabName: 'History',
                         tabFunction: () {
                           Navigator.push(
@@ -132,15 +133,15 @@ class _DriverHomeState extends State<DriverHome>
                       )),
                       Expanded(
                           child: DriverHomeLabels2(
-                        imagePath: "assets/images/car.png",
+                        imagePath: "assets/images/documentlist.png",
                         tabHeight: 120,
-                        tabColor: Color(0xffF97F51),
-                        tabName: 'Profile',
+                        tabColor: Colors.lightBlue.shade500,
+                        tabName: 'Doucment List',
                         tabFunction: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => DriverLogbook()));
+                                  builder: (context) => DriverCarDocumentList()));
                         },
                       )),
                     ],
@@ -182,32 +183,34 @@ class DriverHomeLabels2 extends StatelessWidget {
       child: Material(
         color: tabColor,
         borderRadius: BorderRadius.circular(5.0),
-        child: InkWell(
-          splashColor: Colors.black54,
-          borderRadius: BorderRadius.circular(5.0),
-          onTap: tabFunction,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Padding(
-                padding: EdgeInsets.only(top: 5),
-                child: Image.asset(
-                  imagePath,
-                  width: 60,
-                  height: 60,
+        child: Container(
+          child: InkWell(
+            splashColor: Colors.black54,
+            borderRadius: BorderRadius.circular(5.0),
+            onTap: tabFunction,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(top: 5),
+                  child: Image.asset(
+                    imagePath,
+                    width: 60,
+                    height: 60,
+                  ),
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: Text(
-                  tabName,
-                  style: TextStyle(
-                      fontSize: 16,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
-              )
-            ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
+                  child: Text(
+                    tabName,
+                    style: TextStyle(
+                        fontSize: 18,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),
