@@ -22,18 +22,75 @@ class _AdminHomeState extends State<AdminHome> {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ListTile(
-              title: Text("Today's Car List"),
-              subtitle: Text("Today's Car List"),
-              trailing: InkWell(
-                  onTap: (){},
-                  child: Icon(FontAwesomeIcons.ellipsisVertical)),
-              tileColor: Colors.white,
+          Container(
+            padding: EdgeInsets.all(4.0),
+            child: Row(
+              children: [
+                AdminHomeTab(
+                  imagePath: "assets/images/car.png",
+                  label: "L&t today's Trips",
+                  labelDetails: "22",
+                ),
+                AdminHomeTab(
+                  imagePath: "assets/images/car.png",
+                  label: "AMNS Trips",
+                  labelDetails: "22",
+                ),
+
+              ],
             ),
           ),
+
         ],
+      ),
+    );
+  }
+}
+
+
+class AdminHomeTab extends StatelessWidget {
+
+  String label;
+  String labelDetails;
+  String? imagePath;
+
+  AdminHomeTab({required this.label,required this.labelDetails, required this.imagePath});
+
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child: Container(
+        margin: EdgeInsets.only(left: 4.0,right: 4.0,top: 4.0,bottom: 4.0),
+        child: Material(
+          borderRadius: BorderRadius.circular(5.0),
+          color: Colors.orangeAccent,
+          child: InkWell(
+            onTap: (){},
+            borderRadius: BorderRadius.circular(5.0),
+            child: Row(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 12.0,right: 4.0),
+                  child: Image.asset(imagePath!,height: 40,width: 40,),
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5,top: 16,bottom: 0,right: 0),
+                      child: Text(label,style: TextStyle(fontSize: 14,color: Colors.white),),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 5,top: 8,bottom: 16,right: 0),
+                      child: Text(labelDetails,style: TextStyle(fontSize: 28,fontWeight: FontWeight.bold,color: Colors.white),),
+                    ),
+                  ],
+                ),
+              ],
+
+            ),
+          ),
+        ),
       ),
     );
   }
