@@ -17,7 +17,7 @@ class _AdminHomeState extends State<AdminHome> {
       appBar: AppBar(
         backgroundColor: adminAppbarColor,
         elevation: 0.0,
-        title: Text("Admin Home"),
+        title:const Text("Admin Home"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
