@@ -21,7 +21,7 @@ class _DriverTripsState extends State<DriverTrips> {
       backgroundColor: bgColor,
       appBar: AppBar(
         title: const Text("Home"),
-        backgroundColor: LableColor,
+        backgroundColor: LabelColor,
         centerTitle: true,
         elevation: 0.0,
       ),
@@ -77,7 +77,7 @@ class DriverHomeList extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Icon(FontAwesomeIcons.car,
-                      size: 35, color: LableColor),
+                      size: 35, color: LabelColor),
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
                     child: Text(
@@ -85,7 +85,7 @@ class DriverHomeList extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: LableColor),
+                          color: LabelColor),
                     ),
                   ),
                   Column(
@@ -104,7 +104,7 @@ class DriverHomeList extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.bold,
-                              color: LableColor),
+                              color: LabelColor),
                         ),
                       ),
                     ],
@@ -121,7 +121,7 @@ class DriverHomeList extends StatelessWidget {
                 dashGapLength: 2,
                 lineThickness: 2,
                 direction: Axis.horizontal,
-                dashColor: LableColor,
+                dashColor: LabelColor,
                 dashGapColor: Colors.white,
                 lineLength: MediaQuery.of(context).size.width/1.2,
               ),
@@ -132,7 +132,7 @@ class DriverHomeList extends StatelessWidget {
             child: Row(
               children: [
                 const Icon(FontAwesomeIcons.locationDot,
-                    size: 18, color: LableColor),
+                    size: 18, color: LabelColor),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.only(left: 15),
@@ -141,7 +141,7 @@ class DriverHomeList extends StatelessWidget {
                       style: const TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: LableColor),
+                          color: LabelColor),
                     ),
                   ),
                 ),
@@ -181,7 +181,7 @@ class DriverHomeList extends StatelessWidget {
             child: Row(
               children: [
                 Icon(FontAwesomeIcons.locationDot,
-                    size: 18, color: LableColor),
+                    size: 18, color: LabelColor),
                 Expanded(
                   child: Padding(
                     padding: const EdgeInsets.only(left: 15),
@@ -190,7 +190,7 @@ class DriverHomeList extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 18,
                           fontWeight: FontWeight.bold,
-                          color: LableColor),
+                          color: LabelColor),
                     ),
                   ),
                 ),

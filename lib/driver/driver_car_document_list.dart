@@ -23,7 +23,7 @@ class _DriverCarDocumentListState extends State<DriverCarDocumentList> {
       backgroundColor: bgColor,
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: LableColor,
+        backgroundColor: LabelColor,
         title: Text("Car Documents"),
         centerTitle: true,
       ),
@@ -50,7 +50,7 @@ class _DriverCarDocumentListState extends State<DriverCarDocumentList> {
                       child: Text(
                         documentName[index],
                         style: TextStyle(
-                            color: LableColor,
+                            color: LabelColor,
                             fontSize: 18,
                             fontWeight: FontWeight.bold),
                       ),

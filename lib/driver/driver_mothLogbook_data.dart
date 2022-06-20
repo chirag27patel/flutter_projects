@@ -47,7 +47,7 @@ class _DriverLogbookDataState extends State<DriverLogbookData> {
       backgroundColor: bgColor,
       appBar: AppBar(
         title: const Text('Driver Lobook'),
-        backgroundColor: LableColor,
+        backgroundColor: LabelColor,
         centerTitle: true,
         elevation: 0.0,
 
@@ -93,7 +93,7 @@ class _DriverLogbookDataState extends State<DriverLogbookData> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Material(
-                    color: LableColor,
+                    color: LabelColor,
                     borderRadius: BorderRadius.circular(5.0),
                     child: InkWell(
                       onTap: (){},

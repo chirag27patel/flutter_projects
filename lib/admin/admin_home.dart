@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sejaltravels_2022/admin/admin_car_list.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
 class AdminHome extends StatefulWidget {
@@ -9,7 +10,30 @@ class AdminHome extends StatefulWidget {
   _AdminHomeState createState() => _AdminHomeState();
 }
 
-class _AdminHomeState extends State<AdminHome> {
+class _AdminHomeState extends State<AdminHome> with SingleTickerProviderStateMixin{
+
+  late Animation animation;
+  late AnimationController animationController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    animationController = AnimationController(vsync: this,duration: Duration(seconds: 1));
+    animation = CurvedAnimation(parent: animationController, curve: Curves.elasticOut)..addListener(() {
+      setState((){});
+    });
+    animationController.forward();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    animationController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -42,16 +66,20 @@ class _AdminHomeState extends State<AdminHome> {
                   AdminHomeTab(
                     imagePath: "assets/images/landt.png",
                     label: "L&T",
-                    labelDetails: "22",
+                    labelDetails: "12",
                     tabColor: Colors.yellow.shade600,
                     tabTextColor: Colors.white,
+                    textSize: animation.value*28,
+                    onTap: (){},
                   ),
                   AdminHomeTab(
                     imagePath: "assets/images/amns.png",
                     label: "AM/NS",
-                    labelDetails: "22",
+                    labelDetails: "4",
                     tabColor: Colors.redAccent.shade200,
                     tabTextColor: Colors.white,
+                    textSize: animation.value*28,
+                    onTap: (){},
                   ),
                 ],
               ),
@@ -80,13 +108,19 @@ class _AdminHomeState extends State<AdminHome> {
                         labelDetails: "22",
                         tabColor: Colors.lightBlueAccent,
                         tabTextColor: Colors.white,
+                        textSize: animation.value*28,
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>AdminCarList()));
+                        },
                       ),
                       AdminHomeTab(
                         imagePath: "assets/images/documentlist.png",
                         label: "Car Documetns",
                         labelDetails: "22",
                         tabColor: Colors.orangeAccent,
-                        tabTextColor: Colors.red.shade800,
+                        tabTextColor: Colors.redAccent,
+                        textSize: animation.value*28,
+                        onTap: (){},
                       ),
                     ],
                   ),
@@ -95,9 +129,11 @@ class _AdminHomeState extends State<AdminHome> {
                       AdminHomeTab(
                         imagePath: "assets/images/casual_duty.png",
                         label: "Casual Duty",
-                        labelDetails: "22",
+                        labelDetails: "42",
                         tabColor: Colors.teal,
                         tabTextColor: Colors.white,
+                        textSize: animation.value*28,
+                        onTap: (){},
                       ),
                       AdminHomeTab(
                         imagePath: "assets/images/log.png",
@@ -105,6 +141,8 @@ class _AdminHomeState extends State<AdminHome> {
                         labelDetails: "22",
                         tabColor: Colors.redAccent,
                         tabTextColor: Colors.white,
+                        textSize: animation.value*28,
+                        onTap: (){},
                       ),
                     ],
                   ),
@@ -116,6 +154,8 @@ class _AdminHomeState extends State<AdminHome> {
                         labelDetails: "27",
                         tabColor: Colors.blueGrey,
                         tabTextColor: Colors.white,
+                        textSize: animation.value*28,
+                        onTap: (){},
                       ),
                       AdminHomeTab(
                         imagePath: "assets/images/clock.png",
@@ -123,6 +163,8 @@ class _AdminHomeState extends State<AdminHome> {
                         labelDetails: "00",
                         tabColor: Colors.orange.shade800,
                         tabTextColor: Colors.white,
+                        textSize: animation.value*28,
+                        onTap: (){},
                       ),
                     ],
                   ),
@@ -142,6 +184,9 @@ class AdminHomeTab extends StatelessWidget {
   String imagePath;
   Color tabColor;
   Color tabTextColor;
+  double textSize;
+  VoidCallback onTap;
+
 
   AdminHomeTab(
       {required this.label,
@@ -149,6 +194,9 @@ class AdminHomeTab extends StatelessWidget {
       required this.imagePath,
       required this.tabColor,
       required this.tabTextColor,
+        required this.textSize,
+        required this.onTap,
+
       });
 
   @override
@@ -160,7 +208,7 @@ class AdminHomeTab extends StatelessWidget {
           borderRadius: BorderRadius.circular(5.0),
           color: tabColor,
           child: InkWell(
-            onTap: () {},
+            onTap: onTap,
             borderRadius: BorderRadius.circular(5.0),
             splashColor: Colors.black87,
             child: Row(
@@ -191,7 +239,7 @@ class AdminHomeTab extends StatelessWidget {
                       child: Text(
                         labelDetails,
                         style: TextStyle(
-                            fontSize: 28,
+                            fontSize: textSize,
                             fontWeight: FontWeight.w800,
                             color: tabTextColor),
                       ),

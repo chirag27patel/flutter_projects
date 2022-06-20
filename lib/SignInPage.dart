@@ -38,12 +38,12 @@ class _SignInPageState extends State<SignInPage> {
         elevation: 0.0,
         centerTitle: true,
         title: Text("Sign In Page"),
-        backgroundColor: LableColor,
+        backgroundColor: LabelColor,
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text("SEJAL TRAVELS",style: TextStyle(fontSize: 28,color: LableColor,fontWeight: FontWeight.bold),),
+          Text("SEJAL TRAVELS",style: TextStyle(fontSize: 28,color: LabelColor,fontWeight: FontWeight.bold),),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: CustomTextField(
@@ -81,7 +81,7 @@ class _SignInPageState extends State<SignInPage> {
                   height: 55,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                      primary: LableColor,
+                      primary: LabelColor,
                     ),
                     onPressed: () {
                       if (loginIdController.text.isEmpty ||

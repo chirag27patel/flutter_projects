@@ -28,7 +28,7 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
 
     _animationController = AnimationController(
       vsync: this,
-      duration: Duration(milliseconds: 2000),
+      duration: Duration(seconds: 2),
     );
 
     _animation = CurvedAnimation(parent: _animationController, curve: Curves.elasticOut);
@@ -56,18 +56,18 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
         title: Text("Profile"),
         centerTitle: true,
         elevation: 0.0,
-        backgroundColor: LableColor,
+        backgroundColor: LabelColor,
       ),
       body: Container(
-        margin: EdgeInsets.all(_animation.value*16.0),
+        margin: EdgeInsets.all(16.0),
         child: Column(
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Container(
-                  height: 120,
-                  width: 120,
+                  height: _animation.value*100,
+                  width: 100,
                   margin: EdgeInsets.all(10.0),
                   decoration: BoxDecoration(
                       shape: BoxShape.circle,
@@ -77,12 +77,12 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
                   DriverHomeLabels(
                     driverHomelabel: "Owner Name",
                     driverHomeLabelDetails: "Chirag Patel",
-                    iconData: Icons.person,
+                    iconData: FontAwesomeIcons.userTie,
                   ),
                   DriverHomeLabels(
                     driverHomelabel: "Driver Name",
                     driverHomeLabelDetails: "Chandresh Saddiwala",
-                    iconData: FontAwesomeIcons.users,
+                    iconData: FontAwesomeIcons.idCardClip,
                   ),
                 ]),
               ],
@@ -118,7 +118,7 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
                 ],
               ),
             ),
-            Padding(
+            /*Padding(
               padding: const EdgeInsets.only(right: 10,left: 10,top: 20),
               child: Material(
                 borderRadius: BorderRadius.circular(5.0),
@@ -155,11 +155,11 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
                   ),
                 ),
               ),
-            ),
+            ),*/
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
               child: Material(
-                color: LableColor,
+                color: LabelColor,
                 borderRadius: BorderRadius.circular(5.0),
                 child: InkWell(
                   onTap: () {

@@ -13,7 +13,7 @@ class DriverDocumentPhotos extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: LableColor,
+        backgroundColor: LabelColor,
         elevation: 0.0,
         centerTitle: true,
         title: Text(appBarTitle),

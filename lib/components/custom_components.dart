@@ -68,10 +68,14 @@ class DriverHomeLabels extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 5, top: 10, bottom: 10, left: 20),
+      padding: const EdgeInsets.only(right: 5, top: 10, bottom: 10,),
       child: Container(
         child: Row(
           children: [
+            Icon(iconData,color: LabelColor,size: 22,),
+            Container(
+              width: 8,
+            ),
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -89,7 +93,7 @@ class DriverHomeLabels extends StatelessWidget {
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
-                    color: LableColor,
+                    color: LabelColor,
                   ),
                 ),
               ],
@@ -141,7 +145,7 @@ class DriverHomeLabels2 extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.bold,
-                color: LableColor,
+                color: LabelColor,
               ),
             ),
           ],

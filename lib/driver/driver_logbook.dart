@@ -179,7 +179,7 @@ class _DriverLogbookState extends State<DriverLogbook> {
       appBar: AppBar(
         centerTitle: true,
         title: Text("Logbook Entry"),
-        backgroundColor: LableColor,
+        backgroundColor: LabelColor,
         elevation: 0.0,
       ),
       body: ListView(
@@ -440,7 +440,7 @@ class _DriverLogbookState extends State<DriverLogbook> {
                     width: MediaQuery.of(context).size.width,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        primary: LableColor
+                        primary: LabelColor
                       ),
                   onPressed: submitFunction,
                   child: Text("SUBMIT",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 22),),

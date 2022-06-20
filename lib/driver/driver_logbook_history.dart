@@ -38,7 +38,7 @@ class _DriverLogbookHistoryState extends State<DriverLogbookHistory> {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: LableColor,
+        backgroundColor: LabelColor,
         elevation: 0.0,
         centerTitle: true,
         title: const Text("Logbook Histoy"),
@@ -83,7 +83,7 @@ class _DriverLogbookHistoryState extends State<DriverLogbookHistory> {
             calendarStyle: const CalendarStyle(
               isTodayHighlighted: false,
               selectedDecoration: BoxDecoration(
-                color: LableColor,
+                color: LabelColor,
                 shape: BoxShape.circle
               )
             ),
@@ -135,7 +135,7 @@ class _DriverLogbookHistoryState extends State<DriverLogbookHistory> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Material(
-                      color: LableColor,
+                      color: LabelColor,
                       borderRadius: BorderRadius.circular(5.0),
                       child: InkWell(
                         onTap: (){},

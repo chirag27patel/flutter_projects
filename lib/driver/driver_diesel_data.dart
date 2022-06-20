@@ -16,7 +16,7 @@ class _DriverDieselState extends State<DriverDiesel> {
       backgroundColor: bgColor,
       appBar: AppBar(
         elevation: 0.0,
-        backgroundColor: LableColor,
+        backgroundColor: LabelColor,
         centerTitle: true,
         title: Text("Diesel Charges"),
       ),

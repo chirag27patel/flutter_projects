@@ -45,7 +45,7 @@ class _DriverHomeState extends State<DriverHome>
       appBar: AppBar(
         title: Text("Home"),
         centerTitle: true,
-        backgroundColor: LableColor,
+        backgroundColor: LabelColor,
         elevation: 0.0,
       ),
       body: SingleChildScrollView(
