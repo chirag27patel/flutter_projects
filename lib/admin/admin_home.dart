@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/admin/admin_car_list.dart';
+import 'package:sejaltravels_2022/admin/admin_logbook.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
 class AdminHome extends StatefulWidget {
@@ -142,7 +143,9 @@ class _AdminHomeState extends State<AdminHome> with SingleTickerProviderStateMix
                         tabColor: Colors.redAccent,
                         tabTextColor: Colors.white,
                         textSize: animation.value*28,
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>AdminLogbook()));
+                        },
                       ),
                     ],
                   ),
