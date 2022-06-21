@@ -130,7 +130,7 @@ class _AdminHomeState extends State<AdminHome> with SingleTickerProviderStateMix
                       AdminHomeTab(
                         imagePath: "assets/images/casual_duty.png",
                         label: "Casual Duty",
-                        labelDetails: "42",
+                        labelDetails: "05",
                         tabColor: Colors.teal,
                         tabTextColor: Colors.white,
                         textSize: animation.value*28,
@@ -139,7 +139,7 @@ class _AdminHomeState extends State<AdminHome> with SingleTickerProviderStateMix
                       AdminHomeTab(
                         imagePath: "assets/images/log.png",
                         label: "Logbook",
-                        labelDetails: "22",
+                        labelDetails: "32",
                         tabColor: Colors.redAccent,
                         tabTextColor: Colors.white,
                         textSize: animation.value*28,
