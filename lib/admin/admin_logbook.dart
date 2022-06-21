@@ -18,7 +18,7 @@ class _AdminLogbookState extends State<AdminLogbook> {
   String dropdownvalue = 'Item 1';
 
   // List of items in our dropdown menu
-  List<String> items = [
+  List<String> carList = [
     'Item 1',
     'Item 2',
     'Item 3',
@@ -39,41 +39,7 @@ class _AdminLogbookState extends State<AdminLogbook> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
-              margin: EdgeInsets.only(
-                left: 16,
-                right: 16,
-              ),
-              padding: EdgeInsets.only(right: 10, left: 10),
-              decoration: BoxDecoration(
-                border: Border.all(width: 1, color: Colors.black),
-                borderRadius: BorderRadius.circular(5.0)
-              ),
-              child: DropdownButtonHideUnderline(
-                child: DropdownButton(
-                  // Initial Value
-                  value: dropdownvalue,
-                  isExpanded: true,
-                  // Down Arrow Icon
-                  icon: const Icon(Icons.keyboard_arrow_down),
 
-                  // Array list of items
-                  items: items.map((String items) {
-                    return DropdownMenuItem(
-                      value: items,
-                      child: Text(items),
-                    );
-                  }).toList(),
-                  // After selecting the desired option,it will
-                  // change button value to selected value
-                  onChanged: (String? newValue) {
-                    setState(() {
-                      dropdownvalue = newValue!;
-                    });
-                  },
-                ),
-              ),
-            ),
           ],
         ),
       ),
