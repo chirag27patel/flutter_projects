@@ -15,15 +15,17 @@ class _AdminLogbookState extends State<AdminLogbook> {
   List<String> selectCar = ["Innova", "Swift", "Swift Dzire", "Xylo", "Tavera"];
 
   // Initial Selected Value
-  String dropdownvalue = 'Item 1';
+  String dropdownvalue = 'Innova';
 
   // List of items in our dropdown menu
   List<String> carList = [
-    'Item 1',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
+
+    'Innova',
+    'Innova Crysta',
+    'Tavera',
+    'Xylo',
+    'Swift',
+    'Swift Dzire',
   ];
 
   @override
@@ -39,7 +41,103 @@ class _AdminLogbookState extends State<AdminLogbook> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 16,bottom: 5),
+                  child: Text("Select Car",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 0),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(5.0),
+                  border: Border.all(color: textColor, width: 2),
+                  color: Colors.white
+                ),
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    value: dropdownvalue,
+                    icon: const Icon(Icons.arrow_drop_down,size: 42,),
+                    elevation: 16,
+                    isExpanded: true,
+                    hint: Text("Select Car"),
 
+                    style:  TextStyle(color: textColor,fontSize: 18,fontWeight: FontWeight.bold),
+                    underline: Container(
+                      height: 2,
+                      color: Colors.deepPurpleAccent,
+                    ),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownvalue = newValue!;
+                      });
+                    },
+                    items: carList
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              height: 20,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 16,bottom: 5),
+                  child: Text("Select Department",style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),),
+                ),
+              ],
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 16,vertical: 0),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.0),
+                    border: Border.all(color: textColor, width: 2),
+                    color: Colors.white
+                ),
+                child: DropdownButtonHideUnderline(
+                  child: DropdownButton<String>(
+                    value: dropdownvalue,
+                    icon: const Icon(Icons.arrow_drop_down,size: 42,),
+                    elevation: 16,
+                    isExpanded: true,
+                    hint: Text("Select Car"),
+
+                    style:  TextStyle(color: textColor,fontSize: 18,fontWeight: FontWeight.bold),
+                    underline: Container(
+                      height: 2,
+                      color: Colors.deepPurpleAccent,
+                    ),
+                    onChanged: (String? newValue) {
+                      setState(() {
+                        dropdownvalue = newValue!;
+                      });
+                    },
+                    items: carList
+                        .map<DropdownMenuItem<String>>((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                  ),
+                ),
+              ),
+            ),
           ],
         ),
       ),
