@@ -152,7 +152,23 @@ class _AdminLogbookState extends State<AdminLogbook> {
                 ),
               ),
             ),
-
+            Row(
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 16, vertical: 16.0),
+                    child: SignInButton(
+                      color: adminAppbarColor,
+                      borderRadius: BorderRadius.circular(5.0),
+                      onPressed: () {},
+                      textColor: Colors.white,
+                      text: 'Search',
+                    ),
+                  ),
+                ),
+              ],
+            )
           ],
         ),
       ),

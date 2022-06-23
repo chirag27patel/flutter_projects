@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/admin/admin_car_list.dart';
+import 'package:sejaltravels_2022/admin/admin_diesel_data.dart';
 import 'package:sejaltravels_2022/admin/admin_logbook.dart';
+import 'package:sejaltravels_2022/components/custom_components.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
 class AdminHome extends StatefulWidget {
@@ -158,7 +160,9 @@ class _AdminHomeState extends State<AdminHome> with SingleTickerProviderStateMix
                         tabColor: Colors.blueGrey,
                         tabTextColor: Colors.white,
                         textSize: animation.value*28,
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>AdminDieselData()));
+                        },
                       ),
                       AdminHomeTab(
                         imagePath: "assets/images/clock.png",
@@ -181,79 +185,4 @@ class _AdminHomeState extends State<AdminHome> with SingleTickerProviderStateMix
   }
 }
 
-class AdminHomeTab extends StatelessWidget {
-  String label;
-  String labelDetails;
-  String imagePath;
-  Color tabColor;
-  Color tabTextColor;
-  double textSize;
-  VoidCallback onTap;
 
-
-  AdminHomeTab(
-      {required this.label,
-      required this.labelDetails,
-      required this.imagePath,
-      required this.tabColor,
-      required this.tabTextColor,
-        required this.textSize,
-        required this.onTap,
-
-      });
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        margin: EdgeInsets.only(left: 4.0, right: 4.0, top: 4.0, bottom: 4.0),
-        child: Material(
-          borderRadius: BorderRadius.circular(5.0),
-          color: tabColor,
-          child: InkWell(
-            onTap: onTap,
-            borderRadius: BorderRadius.circular(5.0),
-            splashColor: Colors.black87,
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 12.0, right: 4.0),
-                  child: Image.asset(
-                    imagePath,
-                    height: 100,
-                    width: 50,
-
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 5, top: 16, bottom: 0, right: 0),
-                      child: Text(
-                        label,
-                        style: TextStyle(fontSize: 14, color: tabTextColor),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(
-                          left: 5, top: 0, bottom: 16, right: 0),
-                      child: Text(
-                        labelDetails,
-                        style: TextStyle(
-                            fontSize: textSize,
-                            fontWeight: FontWeight.w800,
-                            color: tabTextColor),
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-}
