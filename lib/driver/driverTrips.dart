@@ -1,5 +1,6 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
@@ -28,12 +29,18 @@ class _DriverTripsState extends State<DriverTrips> {
       body: ListView.builder(
           itemCount: 5,
           padding: const EdgeInsets.all(8.0),
-          itemBuilder: (index, context) {
-            return DriverHomeList(
-              carType: "Swift",
-              destination: "Mumbai Airport",
-              rate: "14 rs",
-              tripType: "One way",
+          itemBuilder: (context, index) {
+            return AnimationConfiguration.staggeredList(
+              position: index,
+              duration: const Duration(milliseconds: 750),
+              child: ScaleAnimation(
+                child: DriverHomeList(
+                  carType: "Swift",
+                  destination: "Mumbai Airport",
+                  rate: "14 rs",
+                  tripType: "One way",
+                ),
+              ),
             );
           }),
     );

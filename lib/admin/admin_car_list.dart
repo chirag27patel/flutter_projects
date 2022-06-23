@@ -50,8 +50,8 @@ class AdminCarList extends StatelessWidget {
             return AnimationConfiguration.staggeredList(
               position: index,
               duration: const Duration(milliseconds: 750),
-              child: SlideAnimation(
-                verticalOffset: 50.0,
+              child: ScaleAnimation(
+
                 child: Container(
                   margin: EdgeInsets.only(
                       left: 4.0, right: 4.0, top: 8.0, bottom: 8.0),
