@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
 class AdminCarList extends StatelessWidget {
@@ -46,43 +47,54 @@ class AdminCarList extends StatelessWidget {
           itemCount: carDetailsData.length,
           padding: EdgeInsets.all(8.0),
           itemBuilder: (context, index) {
-            return Container(
-              margin:
-                  EdgeInsets.only(left: 4.0, right: 4.0, top: 8.0, bottom: 8.0),
-              padding: EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(5.0),
-                color: Colors.white,
-              ),
-              child: Column(
-                children: [
-                  Row(
+            return AnimationConfiguration.staggeredList(
+              position: index,
+              duration: const Duration(milliseconds: 750),
+              child: SlideAnimation(
+                verticalOffset: 50.0,
+                child: Container(
+                  margin: EdgeInsets.only(
+                      left: 4.0, right: 4.0, top: 8.0, bottom: 8.0),
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(5.0),
+                    color: Colors.white,
+                  ),
+                  child: Column(
                     children: [
-                      AdminCarListLabel(
-                          carListLabel: "Car Owner",
-                          carListLabelData: carDetailsData[index].ownerName),
-                      AdminCarListLabel(
-                          carListLabel: "Car No.",
-                          carListLabelData: carDetailsData[index].carNumber),
-                      AdminCarListLabel(
-                          carListLabel: "Driver Name",
-                          carListLabelData: carDetailsData[index].driverName),
+                      Row(
+                        children: [
+                          AdminCarListLabel(
+                              carListLabel: "Car Owner",
+                              carListLabelData:
+                                  carDetailsData[index].ownerName),
+                          AdminCarListLabel(
+                              carListLabel: "Car No.",
+                              carListLabelData:
+                                  carDetailsData[index].carNumber),
+                          AdminCarListLabel(
+                              carListLabel: "Driver Name",
+                              carListLabelData:
+                                  carDetailsData[index].driverName),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          AdminCarListLabel(
+                              carListLabel: "Car Type",
+                              carListLabelData: carDetailsData[index].carType),
+                          AdminCarListLabel(
+                              carListLabel: "Duty Type",
+                              carListLabelData: carDetailsData[index].dutyType),
+                          AdminCarListLabel(
+                              carListLabel: "Contact No",
+                              carListLabelData:
+                                  carDetailsData[index].contactNo),
+                        ],
+                      ),
                     ],
                   ),
-                  Row(
-                    children: [
-                      AdminCarListLabel(
-                          carListLabel: "Car Type",
-                          carListLabelData: carDetailsData[index].carType),
-                      AdminCarListLabel(
-                          carListLabel: "Duty Type",
-                          carListLabelData: carDetailsData[index].dutyType),
-                      AdminCarListLabel(
-                          carListLabel: "Contact No",
-                          carListLabelData: carDetailsData[index].contactNo),
-                    ],
-                  ),
-                ],
+                ),
               ),
             );
           }),
