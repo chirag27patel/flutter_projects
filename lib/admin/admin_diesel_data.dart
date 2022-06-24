@@ -52,16 +52,16 @@ class _AdminDieselDataState extends State<AdminDieselData>
       backgroundColor: bgColor,
       appBar: AppBar(
         elevation: 0.0,
-        title: Text(
+        title: const Text(
           "Diesel Data",
         ),
         centerTitle: true,
         backgroundColor: adminAppbarColor,
       ),
-      body: Container(
-        padding: EdgeInsets.all(8.0),
-        child: SingleChildScrollView(
-          physics: ScrollPhysics(),
+      body: SingleChildScrollView(
+        physics: ScrollPhysics(),
+        child: Container(
+          margin: EdgeInsets.all(8.0),
           child: Column(
             children: [
               Row(
@@ -84,18 +84,17 @@ class _AdminDieselDataState extends State<AdminDieselData>
                   ),
                 ],
               ),
-              Expanded(
-                child: ListView.builder(
-                    itemCount: 5,
-                    physics: NeverScrollableScrollPhysics(),
-                    itemBuilder: (context,index){
-                  return Container(
-                    height: 120,
-                    margin: EdgeInsets.only(left: 8.0,bottom: 8.0,top: 8.0,right: 8.0),
-                    color: Colors.redAccent,
-                  );
-                }),
-              )
+              ListView.builder(
+                  itemCount: 5,
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemBuilder: (context,index){
+                return Container(
+                  height: 120,
+                  margin: const EdgeInsets.only(left: 8.0,bottom: 8.0,top: 8.0,right: 8.0),
+                  color: Colors.redAccent,
+                );
+              })
             ],
           ),
         ),
