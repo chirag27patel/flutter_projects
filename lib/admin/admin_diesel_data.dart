@@ -60,40 +60,44 @@ class _AdminDieselDataState extends State<AdminDieselData>
       ),
       body: Container(
         padding: EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Row(
-              children: [
-                AdminDieselTab(
-                  label: "This Month Diesel Cost",
-                  labelDetails: "22,25,560",
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                AdminDieselTab(
-                  label: "Total Paid",
-                  labelDetails: "22,25,560",
-                ),
-                AdminDieselTab(
-                  label: "Total Unpaid",
-                  labelDetails: "22,25,560",
-                ),
-              ],
-            ),
-            Expanded(
-              child: ListView.builder(
-                  itemCount: 5,
-                  itemBuilder: (context,index){
-                return Container(
-                  height: 120,
-                  margin: EdgeInsets.only(left: 8.0,bottom: 8.0,top: 8.0,right: 8.0),
-                  color: Colors.redAccent,
-                );
-              }),
-            )
-          ],
+        child: SingleChildScrollView(
+          physics: ScrollPhysics(),
+          child: Column(
+            children: [
+              Row(
+                children: [
+                  AdminDieselTab(
+                    label: "This Month Diesel Cost",
+                    labelDetails: "22,25,560",
+                  ),
+                ],
+              ),
+              Row(
+                children: [
+                  AdminDieselTab(
+                    label: "Total Paid",
+                    labelDetails: "22,25,560",
+                  ),
+                  AdminDieselTab(
+                    label: "Total Unpaid",
+                    labelDetails: "22,25,560",
+                  ),
+                ],
+              ),
+              Expanded(
+                child: ListView.builder(
+                    itemCount: 5,
+                    physics: NeverScrollableScrollPhysics(),
+                    itemBuilder: (context,index){
+                  return Container(
+                    height: 120,
+                    margin: EdgeInsets.only(left: 8.0,bottom: 8.0,top: 8.0,right: 8.0),
+                    color: Colors.redAccent,
+                  );
+                }),
+              )
+            ],
+          ),
         ),
       ),
     );

@@ -89,7 +89,7 @@ class _AdminLogbookState extends State<AdminLogbook> {
                         carList.map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
-                        child: Text(value),
+                        child: Text(value,style: TextStyle(color: Colors.black),),
                       );
                     }).toList(),
                   ),
@@ -146,7 +146,7 @@ class _AdminLogbookState extends State<AdminLogbook> {
                         carList.map<DropdownMenuItem<String>>((String value) {
                       return DropdownMenuItem<String>(
                         value: value,
-                        child: Text(value),
+                        child: Text(value,style:TextStyle(color: Colors.black)),
                       );
                     }).toList(),
                   ),
