@@ -41,7 +41,7 @@ class SignInButton extends CustomRaisedButton {
     required VoidCallback? onPressed,
   }) : super(
           child: Text(
-            text.toUpperCase(),
+            text,
             style: TextStyle(color: textColor, fontSize: 18.0,fontWeight: FontWeight.bold),
           ),
           color: color,

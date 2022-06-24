@@ -162,7 +162,7 @@ class _AdminLogbookState extends State<AdminLogbook> {
                       color: adminAppbarColor,
                       borderRadius: BorderRadius.circular(5.0),
                       onPressed: () {},
-                      textColor: Colors.red,
+                      textColor: Colors.white,
                       text: 'Search',
                     ),
                   ),
