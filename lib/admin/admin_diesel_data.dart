@@ -84,15 +84,54 @@ class _AdminDieselDataState extends State<AdminDieselData>
                   ),
                 ],
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 8,top: 10),
+                    child: Text("Transaction Details",style: TextStyle(
+                      fontSize: 18,fontWeight: FontWeight.bold
+                    ),),
+                  ),
+                ],
+              ),
               ListView.builder(
                   itemCount: 5,
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (context,index){
                 return Container(
-                  height: 120,
-                  margin: const EdgeInsets.only(left: 8.0,bottom: 8.0,top: 8.0,right: 8.0),
-                  color: Colors.redAccent,
+                  margin: EdgeInsets.only(left: 8.0,right: 8.0,top: 4.0,bottom: 4.0),
+                  padding: EdgeInsets.all(8.0),
+                  color: Colors.white,
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text("Amount : 55000",style: TextStyle(fontSize: 18),),
+                          Container(
+                            height: 5,
+                          ),
+                          Text("Status : Paid",style: TextStyle(fontSize: 18),),
+                        ],
+                      ),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Row(
+
+                            children: [
+                              Icon(Icons.calendar_month,color: textColor,size: 18,),
+                              Text("15/11/2022",style: TextStyle(fontSize: 16,color: textColor,),),
+                            ],
+                          ),
+                          Text("Status : Paid",style: TextStyle(fontSize: 18),),
+                        ],
+                      ),
+                    ],
+                  ),
                 );
               })
             ],

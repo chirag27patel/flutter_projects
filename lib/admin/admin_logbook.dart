@@ -1,7 +1,4 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/components/custom_raised_button.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
