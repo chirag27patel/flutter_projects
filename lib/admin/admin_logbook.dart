@@ -31,6 +31,7 @@ class _AdminLogbookState extends State<AdminLogbook> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: bgColor,
       appBar: AppBar(
         backgroundColor: adminAppbarColor,
         elevation: 0.0,
@@ -158,12 +159,15 @@ class _AdminLogbookState extends State<AdminLogbook> {
                   child: Padding(
                     padding: const EdgeInsets.symmetric(
                         horizontal: 16, vertical: 16.0),
-                    child: SignInButton(
-                      color: adminAppbarColor,
-                      borderRadius: BorderRadius.circular(5.0),
-                      onPressed: () {},
-                      textColor: Colors.white,
-                      text: 'Search',
+                    child: SizedBox(
+                      height: 60,
+                      child: SignInButton(
+                        color: adminAppbarColor,
+                        borderRadius: BorderRadius.circular(5.0),
+                        onPressed: () {},
+                        textColor: Colors.white,
+                        text: 'Search',
+                      ),
                     ),
                   ),
                 ),
