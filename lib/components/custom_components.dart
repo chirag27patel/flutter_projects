@@ -231,3 +231,38 @@ class AdminHomeTab extends StatelessWidget {
     );
   }
 }
+
+
+class AdminCasualDutyList extends StatelessWidget {
+  String label;
+  String labelDetails;
+
+  AdminCasualDutyList({required this.label, required this.labelDetails});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.only(left: 4, right: 4, top: 4, bottom: 4),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            label,
+            style: TextStyle(
+              fontSize: 14,
+              color: textColor,
+            ),
+          ),
+          Text(
+            labelDetails,
+            style: TextStyle(
+              fontSize: 16,
+              color: Colors.black,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}

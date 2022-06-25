@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/admin/admin_car_list.dart';
+import 'package:sejaltravels_2022/admin/admin_casual_duty.dart';
 import 'package:sejaltravels_2022/admin/admin_diesel_data.dart';
 import 'package:sejaltravels_2022/admin/admin_logbook.dart';
 import 'package:sejaltravels_2022/components/custom_components.dart';
@@ -73,7 +74,9 @@ class _AdminHomeState extends State<AdminHome> with SingleTickerProviderStateMix
                     tabColor: Colors.yellow.shade600,
                     tabTextColor: Colors.white,
                     textSize: animation.value*28,
-                    onTap: (){},
+                    onTap: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AdminCasualDuty()));
+                    },
                   ),
                   AdminHomeTab(
                     imagePath: "assets/images/amns.png",
