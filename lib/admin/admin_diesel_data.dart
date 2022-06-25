@@ -148,8 +148,11 @@ class _AdminDieselDataState extends State<AdminDieselData>
                                     "Paid",
                                     style: TextStyle(
                                         fontSize: 18,
-                                        fontWeight: FontWeight.bold),
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.green
+                                    ),
                                   ),
+
                                 ],
                               ),
                             ],
@@ -211,7 +214,7 @@ class AdminDieselTab extends StatelessWidget {
                   ),
                   Text(
                     labelDetails,
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: adminAppbarColor),
                   ),
                 ],
               ),
