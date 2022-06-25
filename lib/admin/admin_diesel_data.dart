@@ -57,6 +57,9 @@ class _AdminDieselDataState extends State<AdminDieselData>
         ),
         centerTitle: true,
         backgroundColor: adminAppbarColor,
+        actions: [
+          IconButton(onPressed: (){}, icon: Icon(FontAwesomeIcons.plus))
+        ],
       ),
       body: SingleChildScrollView(
         physics: ScrollPhysics(),
@@ -88,10 +91,12 @@ class _AdminDieselDataState extends State<AdminDieselData>
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: 8,top: 10),
-                    child: Text("Transaction Details",style: TextStyle(
-                      fontSize: 18,fontWeight: FontWeight.bold
-                    ),),
+                    padding: const EdgeInsets.only(left: 8, top: 10),
+                    child: Text(
+                      "Transaction Details",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    ),
                   ),
                 ],
               ),
@@ -99,41 +104,81 @@ class _AdminDieselDataState extends State<AdminDieselData>
                   itemCount: 5,
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (context,index){
-                return Container(
-                  margin: EdgeInsets.only(left: 8.0,right: 8.0,top: 4.0,bottom: 4.0),
-                  padding: EdgeInsets.all(8.0),
-                  color: Colors.white,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      margin: EdgeInsets.only(
+                          left: 8.0, right: 8.0, top: 8.0, bottom: 8.0),
+                      padding: EdgeInsets.only(
+                          top: 16.0, bottom: 16.0, left: 16.0, right: 16.0),
+                      color: Colors.white,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text("Amount : 55000",style: TextStyle(fontSize: 18),),
-                          Container(
-                            height: 5,
-                          ),
-                          Text("Status : Paid",style: TextStyle(fontSize: 18),),
-                        ],
-                      ),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Icon(Icons.calendar_month,color: textColor,size: 18,),
-                              Text("15/11/2022",style: TextStyle(fontSize: 16,color: textColor,),),
+                              Row(
+                                children: [
+                                  Text(
+                                    "Amount : ",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  Text(
+                                    "55000",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
+                              Container(
+                                height: 5,
+                              ),
+                              Row(
+                                children: [
+                                  Text(
+                                    "Status : ",
+                                    style: TextStyle(
+                                      fontSize: 18,
+                                    ),
+                                  ),
+                                  Text(
+                                    "Paid",
+                                    style: TextStyle(
+                                        fontSize: 18,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                ],
+                              ),
                             ],
                           ),
-                          Text("Status : Paid",style: TextStyle(fontSize: 18),),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: [
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    right: 2.0, bottom: 2.0),
+                                child: Icon(
+                                  FontAwesomeIcons.calendar,
+                                  color: textColor,
+                                  size: 14,
+                                ),
+                              ),
+                              Text(
+                                "15/11/2022",
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: textColor,
+                                ),
+                              ),
+                            ],
+                          ),
                         ],
                       ),
-                    ],
-                  ),
-                );
-              })
+                    );
+                  }),
             ],
           ),
         ),
