@@ -1,33 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sejaltravels_2022/components/custom_components.dart';
+import 'package:sejaltravels_2022/components/custom_raised_button.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
 class AdminCarList extends StatelessWidget {
   List<carDetails> carDetailsData = []
     ..add(carDetails(
         ownerName: "Chirag Patel",
-        carNumber: "Gj-05-GF-8884",
+        carNumber: "GJ-05-GF-8884",
         driverName: "Chirag Patel",
         carType: "Innova",
         dutyType: "Monthly",
         contactNo: "8141934349"))
     ..add(carDetails(
         ownerName: "Sanket Patel",
-        carNumber: "Gj-05-JK-7027",
+        carNumber: "GJ-05-JK-7027",
         driverName: "Rashmikant",
         carType: "Innova",
         dutyType: "Monthly",
         contactNo: "9879384143"))
     ..add(carDetails(
         ownerName: "Chirag Patel",
-        carNumber: "Gj-05-GF-8884",
+        carNumber: "GJ-05-GF-8884",
         driverName: "Chirag Patel",
         carType: "Innova",
         dutyType: "Monthly",
         contactNo: "8141934349"))
     ..add(carDetails(
         ownerName: "Chirag Patel",
-        carNumber: "Gj-05-GF-8884",
+        carNumber: "GJ-05-GF-8884",
         driverName: "Chirag Patel",
         carType: "Innova",
         dutyType: "Monthly",
@@ -51,7 +54,6 @@ class AdminCarList extends StatelessWidget {
               position: index,
               duration: const Duration(milliseconds: 750),
               child: ScaleAnimation(
-
                 child: Container(
                   margin: EdgeInsets.only(
                       left: 4.0, right: 4.0, top: 8.0, bottom: 8.0),
@@ -72,10 +74,6 @@ class AdminCarList extends StatelessWidget {
                               carListLabel: "Car No.",
                               carListLabelData:
                                   carDetailsData[index].carNumber),
-                          AdminCarListLabel(
-                              carListLabel: "Driver Name",
-                              carListLabelData:
-                                  carDetailsData[index].driverName),
                         ],
                       ),
                       Row(
@@ -86,12 +84,61 @@ class AdminCarList extends StatelessWidget {
                           AdminCarListLabel(
                               carListLabel: "Duty Type",
                               carListLabelData: carDetailsData[index].dutyType),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          AdminCarListLabel(
+                              carListLabel: "Driver Name",
+                              carListLabelData:
+                                  carDetailsData[index].driverName),
                           AdminCarListLabel(
                               carListLabel: "Contact No",
                               carListLabelData:
                                   carDetailsData[index].contactNo),
                         ],
                       ),
+                      Row(
+                        
+                        children: [
+                          Expanded(
+                            child: CustomMaterialButton(
+                                buttonText: "Document",
+                                iconData: FontAwesomeIcons.solidFolderClosed,
+                                iconColor: Colors.white,
+                                buttonColor: Colors.orangeAccent,
+                                borderRadius: 5.0,
+                                buttonHeight: 35,
+                                textHeight: 14),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Expanded(
+                            child: CustomMaterialButton(
+                                buttonText: "Diesel",
+                                iconData: FontAwesomeIcons.solidFolderClosed,
+                                iconColor: Colors.white,
+                                buttonColor: Colors.red,
+                                borderRadius: 5.0,
+                                buttonHeight: 35,
+                                textHeight: 14),
+                          ),
+                          SizedBox(
+                            width: 5,
+                          ),
+                          Expanded(
+                            child: CustomMaterialButton(
+                                buttonText: "Document",
+                                iconData: FontAwesomeIcons.solidFolderClosed,
+                                iconColor: Colors.white,
+                                buttonColor: Colors.orangeAccent,
+                                borderRadius: 5.0,
+                                buttonHeight: 35,
+                                textHeight: 14),
+                          ),
+                        ],
+                      )
                     ],
                   ),
                 ),
@@ -122,11 +169,11 @@ class AdminCarListLabel extends StatelessWidget {
           children: [
             Text(
               carListLabel,
-              style: TextStyle(fontSize: 14, color: textColor),
+              style: TextStyle(fontSize: 16, color: textColor),
             ),
             Text(
               carListLabelData,
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
           ],
         ),

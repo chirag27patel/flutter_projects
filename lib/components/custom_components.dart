@@ -68,11 +68,19 @@ class DriverHomeLabels extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 5, top: 10, bottom: 10,),
+      padding: const EdgeInsets.only(
+        right: 5,
+        top: 10,
+        bottom: 10,
+      ),
       child: Container(
         child: Row(
           children: [
-            Icon(iconData,color: LabelColor,size: 22,),
+            Icon(
+              iconData,
+              color: LabelColor,
+              size: 22,
+            ),
             Container(
               width: 8,
             ),
@@ -129,13 +137,16 @@ class DriverHomeLabels2 extends StatelessWidget {
               children: [
                 Padding(
                   padding: const EdgeInsets.only(right: 16),
-                  child: Icon(iconData, size: 20, color: textColor,),
+                  child: Icon(
+                    iconData,
+                    size: 20,
+                    color: textColor,
+                  ),
                 ),
                 Text(
                   driverHomelabel,
                   textAlign: TextAlign.start,
-                  style: TextStyle(
-                      fontSize: 16,  color: textColor),
+                  style: TextStyle(fontSize: 16, color: textColor),
                 ),
               ],
             ),
@@ -164,17 +175,15 @@ class AdminHomeTab extends StatelessWidget {
   double textSize;
   VoidCallback onTap;
 
-
-  AdminHomeTab(
-      {required this.label,
-        required this.labelDetails,
-        required this.imagePath,
-        required this.tabColor,
-        required this.tabTextColor,
-        required this.textSize,
-        required this.onTap,
-
-      });
+  AdminHomeTab({
+    required this.label,
+    required this.labelDetails,
+    required this.imagePath,
+    required this.tabColor,
+    required this.tabTextColor,
+    required this.textSize,
+    required this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -196,7 +205,6 @@ class AdminHomeTab extends StatelessWidget {
                     imagePath,
                     height: 100,
                     width: 50,
-
                   ),
                 ),
                 Column(
@@ -232,7 +240,6 @@ class AdminHomeTab extends StatelessWidget {
   }
 }
 
-
 class AdminCasualDutyList extends StatelessWidget {
   String label;
   String labelDetails;
@@ -262,6 +269,61 @@ class AdminCasualDutyList extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class CustomMaterialButton extends StatelessWidget {
+  String buttonText;
+  IconData iconData;
+  Color iconColor;
+  Color buttonColor;
+  double borderRadius;
+  double buttonHeight;
+  double textHeight;
+
+  CustomMaterialButton(
+      {required this.buttonText,
+      required this.iconData,
+      required this.iconColor,
+      required this.buttonColor,
+      required this.borderRadius,
+      required this.buttonHeight,
+      required this.textHeight,
+      });
+
+  @override
+  Widget build(BuildContext context) {
+    return Material(
+      color: buttonColor,
+      borderRadius: BorderRadius.circular(borderRadius),
+      child: InkWell(
+        onTap: () {},
+        child: Container(
+          height: buttonHeight,
+          padding: EdgeInsets.all(5.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                buttonText.toUpperCase(),
+                style: TextStyle(
+                    fontSize: 14,
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold),
+              ),
+              Container(
+                width: 10,
+              ),
+              Icon(
+                iconData,
+                color: iconColor,
+                size: 16,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

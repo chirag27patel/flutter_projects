@@ -8,7 +8,7 @@ class CustomRaisedButton extends StatelessWidget {
   final BorderRadius borderRadius;
   final VoidCallback? onPressed;
 
-  const CustomRaisedButton({
+   CustomRaisedButton({
     required this.child,
     required this.color,
     required this.borderRadius,
@@ -66,18 +66,13 @@ class SocialSignInButton extends CustomRaisedButton {
                Icon(
                 iconData,
                 color: iconColor,
-                 size: 32,
+                 size: 22,
               ),
               Text(
                 text,
-                style: TextStyle(color: textColor, fontSize: 26.0),
+                style: TextStyle(color: textColor, fontSize: 16.0),
               ),
-              const Opacity(
-                opacity: 0.0,
-                  child:  Icon(
-                Icons.check,
-                color: Colors.red,
-              )),
+
             ],
           ),
           color: color,
