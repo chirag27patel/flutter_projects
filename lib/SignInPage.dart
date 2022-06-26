@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:sejaltravels_2022/admin/admin_home.dart';
 import 'package:sejaltravels_2022/components/custom_textfield.dart';
 import 'package:sejaltravels_2022/const/const.dart';
-import 'package:sejaltravels_2022/driver/driverTrips.dart';
+import 'dart:math' as math;
 import 'package:sejaltravels_2022/driver/driver_home.dart';
-
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -14,8 +13,8 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
-  final TextEditingController loginIdController= TextEditingController();
-  final TextEditingController passwordController=  TextEditingController();
+  final TextEditingController loginIdController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   bool isButtonEnabled = true;
 
   final snackBar = SnackBar(
@@ -40,80 +39,90 @@ class _SignInPageState extends State<SignInPage> {
         title: Text("Sign In Page"),
         backgroundColor: LabelColor,
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      body: Stack(
         children: [
-          Text("SEJAL TRAVELS",style: TextStyle(fontSize: 28,color: LabelColor,fontWeight: FontWeight.bold),),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            child: CustomTextField(
-              hintText: 'Login Id',
-              textEditingController: loginIdController,
-              borderColor: Colors.grey.shade800,
-              borderRadius: 5.0,
-              borderWidth: 2.0,
-              keyBoardType: TextInputType.text,
-              enableBorderWidth: 2,
-              isPassword: false,
-              onTapfunction: (){},
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-            child: CustomTextField(
-              hintText: 'Password',
-              textEditingController: passwordController,
-              borderColor: Colors.grey.shade800,
-              borderRadius: 5.0,
-              borderWidth: 2.0,
-              keyBoardType: TextInputType.text,
-              onTapfunction: (){},
-              enableBorderWidth: 2.0,
-              isPassword: true,
-            ),
+          Container(
+            height: MediaQuery.of(context).size.height,
+            width: MediaQuery.of(context).size.width,
+            child: Image.asset("assets/images/sejal_bg.png",fit: BoxFit.fitHeight),
           ),
           Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 10),
-                child: SizedBox(
-                  height: 55,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      primary: LabelColor,
-                    ),
-                    onPressed: () {
-                      if (loginIdController.text.isEmpty ||
-                          passwordController.text.isEmpty) {
-                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                      } else if(loginIdController.text == "admin" ||
-                          passwordController.text == "admin") {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => AdminHome()));
-                      }else{
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => DriverHome()));
-                      }
-                    },
-                    child: const Text(
-                      "Sing In",
-                      style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                child: CustomTextField(
+                  hintText: 'Login Id',
+                  textEditingController: loginIdController,
+                  borderColor: Colors.grey.shade800,
+                  borderRadius: 5.0,
+                  borderWidth: 2.0,
+                  keyBoardType: TextInputType.text,
+                  enableBorderWidth: 2,
+                  isPassword: false,
+                  onTapfunction: () {},
+                ),
+              ),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                child: CustomTextField(
+                  hintText: 'Password',
+                  textEditingController: passwordController,
+                  borderColor: Colors.grey.shade800,
+                  borderRadius: 5.0,
+                  borderWidth: 2.0,
+                  keyBoardType: TextInputType.text,
+                  onTapfunction: () {},
+                  enableBorderWidth: 2.0,
+                  isPassword: true,
+                ),
+              ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 10),
+                    child: SizedBox(
+                      height: 55,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          primary: LabelColor,
+                        ),
+                        onPressed: () {
+                          if (loginIdController.text.isEmpty ||
+                              passwordController.text.isEmpty) {
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(snackBar);
+                          } else if (loginIdController.text == "admin" ||
+                              passwordController.text == "admin") {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => AdminHome()));
+                          } else {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => DriverHome()));
+                          }
+                        },
+                        child: const Text(
+                          "Sing In",
+                          style: TextStyle(
+                              fontSize: 18, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                ],
               ),
             ],
           ),
         ],
       ),
-
-
     );
-
   }
 }
