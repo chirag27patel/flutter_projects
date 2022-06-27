@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sejaltravels_2022/admin/admin_car_document.dart';
 import 'package:sejaltravels_2022/admin/admin_car_list.dart';
 import 'package:sejaltravels_2022/admin/admin_casual_duty.dart';
+import 'package:sejaltravels_2022/admin/admin_casual_duty_history.dart';
 import 'package:sejaltravels_2022/admin/admin_diesel_data.dart';
 import 'package:sejaltravels_2022/admin/admin_logbook.dart';
 import 'package:sejaltravels_2022/components/custom_components.dart';
@@ -92,7 +94,7 @@ class _AdminHomeState extends State<AdminHome>
                     imagePath: "assets/images/amns.png",
                     label: "AM/NS",
                     labelDetails: "4",
-                    tabColor: Colors.blue,
+                    tabColor: Colors.lightBlue.shade400,
                     tabTextColor: Colors.white,
                     textSize: animation.value * 28,
                     onTap: () {
@@ -146,7 +148,12 @@ class _AdminHomeState extends State<AdminHome>
                         tabColor: Colors.red.shade500,
                         tabTextColor: Colors.white,
                         textSize: animation.value * 28,
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AdminCarDocument()));
+                        },
                       ),
                     ],
                   ),
@@ -159,7 +166,13 @@ class _AdminHomeState extends State<AdminHome>
                         tabColor: Color(0xff58B19F),
                         tabTextColor: Colors.white,
                         textSize: animation.value * 28,
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      AdminCasualDutyHistory()));
+                        },
                       ),
                       AdminHomeTab(
                         imagePath: "assets/images/log.png",
