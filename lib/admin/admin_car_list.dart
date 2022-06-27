@@ -98,46 +98,37 @@ class AdminCarList extends StatelessWidget {
                                   carDetailsData[index].contactNo),
                         ],
                       ),
-                      Row(
-                        
-                        children: [
-                          Expanded(
-                            child: CustomMaterialButton(
-                                buttonText: "Document",
-                                iconData: FontAwesomeIcons.solidFolderClosed,
-                                iconColor: Colors.white,
-                                buttonColor: Colors.orangeAccent,
-                                borderRadius: 5.0,
-                                buttonHeight: 35,
-                                textHeight: 14),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Expanded(
-                            child: CustomMaterialButton(
-                                buttonText: "Diesel",
-                                iconData: FontAwesomeIcons.solidFolderClosed,
-                                iconColor: Colors.white,
-                                buttonColor: Colors.red,
-                                borderRadius: 5.0,
-                                buttonHeight: 35,
-                                textHeight: 14),
-                          ),
-                          SizedBox(
-                            width: 5,
-                          ),
-                          Expanded(
-                            child: CustomMaterialButton(
-                                buttonText: "Document",
-                                iconData: FontAwesomeIcons.solidFolderClosed,
-                                iconColor: Colors.white,
-                                buttonColor: Colors.orangeAccent,
-                                borderRadius: 5.0,
-                                buttonHeight: 35,
-                                textHeight: 14),
-                          ),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+
+                          children: [
+                            Expanded(
+                              child: CustomMaterialButton(
+                                  buttonText: "Document",
+                                  iconData: FontAwesomeIcons.solidFolderClosed,
+                                  iconColor: Colors.white,
+                                  buttonColor: Colors.orangeAccent.shade400,
+                                  borderRadius: 5.0,
+                                  buttonHeight: 35,
+                                  textHeight: 14),
+                            ),
+                            SizedBox(
+                              width: 10,
+                            ),
+                            Expanded(
+                              child: CustomMaterialButton(
+                                  buttonText: "Diesel",
+                                  iconData: FontAwesomeIcons.gasPump,
+                                  iconColor: Colors.white,
+                                  buttonColor: Colors.red.shade700,
+                                  borderRadius: 5.0,
+                                  buttonHeight: 35,
+                                  textHeight: 14),
+                            ),
+
+                          ],
+                        ),
                       )
                     ],
                   ),

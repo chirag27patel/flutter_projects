@@ -300,6 +300,8 @@ class CustomMaterialButton extends StatelessWidget {
       borderRadius: BorderRadius.circular(borderRadius),
       child: InkWell(
         onTap: () {},
+        splashColor: Colors.black,
+        borderRadius: BorderRadius.circular(borderRadius),
         child: Container(
           height: buttonHeight,
           padding: EdgeInsets.all(5.0),

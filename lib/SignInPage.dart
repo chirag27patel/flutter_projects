@@ -39,85 +39,76 @@ class _SignInPageState extends State<SignInPage> {
         title: Text("Sign In Page"),
         backgroundColor: LabelColor,
       ),
-      body: Stack(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            height: MediaQuery.of(context).size.height,
-            width: MediaQuery.of(context).size.width,
-            child: Image.asset("assets/images/sejal_bg.png",fit: BoxFit.fitHeight),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            child: CustomTextField(
+              hintText: 'Login Id',
+              textEditingController: loginIdController,
+              borderColor: Colors.grey.shade800,
+              borderRadius: 5.0,
+              borderWidth: 2.0,
+              keyBoardType: TextInputType.text,
+              enableBorderWidth: 2,
+              isPassword: false,
+              onTapfunction: () {},
+            ),
+          ),
+          Padding(
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            child: CustomTextField(
+              hintText: 'Password',
+              textEditingController: passwordController,
+              borderColor: Colors.grey.shade800,
+              borderRadius: 5.0,
+              borderWidth: 2.0,
+              keyBoardType: TextInputType.text,
+              onTapfunction: () {},
+              enableBorderWidth: 2.0,
+              isPassword: true,
+            ),
           ),
           Column(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: CustomTextField(
-                  hintText: 'Login Id',
-                  textEditingController: loginIdController,
-                  borderColor: Colors.grey.shade800,
-                  borderRadius: 5.0,
-                  borderWidth: 2.0,
-                  keyBoardType: TextInputType.text,
-                  enableBorderWidth: 2,
-                  isPassword: false,
-                  onTapfunction: () {},
-                ),
-              ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                child: CustomTextField(
-                  hintText: 'Password',
-                  textEditingController: passwordController,
-                  borderColor: Colors.grey.shade800,
-                  borderRadius: 5.0,
-                  borderWidth: 2.0,
-                  keyBoardType: TextInputType.text,
-                  onTapfunction: () {},
-                  enableBorderWidth: 2.0,
-                  isPassword: true,
-                ),
-              ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 10),
-                    child: SizedBox(
-                      height: 55,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          primary: LabelColor,
-                        ),
-                        onPressed: () {
-                          if (loginIdController.text.isEmpty ||
-                              passwordController.text.isEmpty) {
-                            ScaffoldMessenger.of(context)
-                                .showSnackBar(snackBar);
-                          } else if (loginIdController.text == "admin" ||
-                              passwordController.text == "admin") {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => AdminHome()));
-                          } else {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => DriverHome()));
-                          }
-                        },
-                        child: const Text(
-                          "Sing In",
-                          style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
-                      ),
+                padding: const EdgeInsets.symmetric(
+                    horizontal: 20, vertical: 10),
+                child: SizedBox(
+                  height: 55,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      primary: LabelColor,
+                    ),
+                    onPressed: () {
+                      if (loginIdController.text.isEmpty ||
+                          passwordController.text.isEmpty) {
+                        ScaffoldMessenger.of(context)
+                            .showSnackBar(snackBar);
+                      } else if (loginIdController.text == "admin" ||
+                          passwordController.text == "admin") {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => AdminHome()));
+                      } else {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => DriverHome()));
+                      }
+                    },
+                    child: const Text(
+                      "Sing In",
+                      style: TextStyle(
+                          fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                   ),
-                ],
+                ),
               ),
             ],
           ),
