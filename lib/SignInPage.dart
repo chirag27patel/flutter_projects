@@ -89,8 +89,8 @@ class _SignInPageState extends State<SignInPage> {
                           passwordController.text.isEmpty) {
                         ScaffoldMessenger.of(context)
                             .showSnackBar(snackBar);
-                      } else if (loginIdController.text == "admin" ||
-                          passwordController.text == "admin") {
+                      } else if (loginIdController.text == "admin" &&
+                          passwordController.text == "admin" ) {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
