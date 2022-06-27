@@ -77,14 +77,19 @@ class _AdminCasualDutyState extends State<AdminCasualDuty> {
                     Row(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
-                        ElevatedButton(
-                          onPressed: () {},
-                          child: Text(
-                            "View Full Details",
-                            style: TextStyle(fontWeight: FontWeight.bold),
-                          ),
-                          style: ElevatedButton.styleFrom(
-                            primary: adminAppbarColor,
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 5.0,top: 5.0),
+                          child: SizedBox(
+                            height: 40,
+                            width: 120,
+                            child: CustomMaterialButton(
+                                buttonText: "Details",
+                                iconData: FontAwesomeIcons.list,
+                                iconColor: Colors.white,
+                                buttonColor: adminAppbarColor,
+                                borderRadius: 5.0,
+                                buttonHeight: 35,
+                                textHeight: 14),
                           ),
                         ),
                       ],

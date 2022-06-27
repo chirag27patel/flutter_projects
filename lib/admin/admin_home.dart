@@ -92,7 +92,7 @@ class _AdminHomeState extends State<AdminHome>
                     imagePath: "assets/images/amns.png",
                     label: "AM/NS",
                     labelDetails: "4",
-                    tabColor: Colors.redAccent.shade200,
+                    tabColor: Colors.red,
                     tabTextColor: Colors.white,
                     textSize: animation.value * 28,
                     onTap: () {
@@ -165,7 +165,7 @@ class _AdminHomeState extends State<AdminHome>
                         imagePath: "assets/images/log.png",
                         label: "Logbook",
                         labelDetails: "32",
-                        tabColor: Colors.redAccent,
+                        tabColor: Colors.indigo,
                         tabTextColor: Colors.white,
                         textSize: animation.value * 28,
                         onTap: () {
