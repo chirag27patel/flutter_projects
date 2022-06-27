@@ -22,6 +22,7 @@ class _AdminCasualDutyState extends State<AdminCasualDuty> {
           elevation: 0.0,
           title: Text("${widget.appBarTitle} Casual Duties"),
           centerTitle: true,
+
         ),
         body: ListView.builder(
             padding: EdgeInsets.all(8.0),
@@ -38,6 +39,7 @@ class _AdminCasualDutyState extends State<AdminCasualDuty> {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Expanded(
                             child: AdminCasualDutyList(

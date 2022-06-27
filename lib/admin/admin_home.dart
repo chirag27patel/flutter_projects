@@ -50,6 +50,25 @@ class _AdminHomeState extends State<AdminHome>
         elevation: 0.0,
         title: const Text("Admin Home"),
         centerTitle: true,
+        actions: [
+          TextButton(
+              onPressed: () {
+
+              },
+              child: Row(
+                children: [
+                  Text("Logout",style: TextStyle(color: Colors.white),),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Icon(
+                      FontAwesomeIcons.signOut,
+                      color: Colors.white,
+                      size: 16,
+                    ),
+                  ),
+                ],
+              )),
+        ],
       ),
       body: SingleChildScrollView(
         child: Column(
