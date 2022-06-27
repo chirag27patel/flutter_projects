@@ -283,6 +283,7 @@ class CustomMaterialButton extends StatelessWidget {
   double buttonHeight;
   double textHeight;
 
+
   CustomMaterialButton(
       {required this.buttonText,
       required this.iconData,
@@ -312,7 +313,7 @@ class CustomMaterialButton extends StatelessWidget {
                 buttonText.toUpperCase(),
                 style: TextStyle(
                     fontSize: 14,
-                    color: Colors.white,
+                    color: iconColor,
                     fontWeight: FontWeight.bold),
               ),
               Container(
