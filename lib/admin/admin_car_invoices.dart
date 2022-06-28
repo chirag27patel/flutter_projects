@@ -75,7 +75,13 @@ class _AdminCarInvoicesState extends State<AdminCarInvoices> {
              height: 55,
             color: Colors.redAccent,
             alignment: Alignment.center,
-            child: Text("Total : ₹ 2,71,000",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 22),),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Text("Total :",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 22),),
+                Text("₹ 2,73,000",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24,),) ,
+              ],
+            ),
           ),
         ],
       ),
