@@ -44,7 +44,6 @@ class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
 
                   if (_focusedDay.day == DateTime.now().day) {
                     itemCount = 1;
-
                   } else {
                     itemCount = 3;
                   }
@@ -75,6 +74,10 @@ class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
                           top: 8.0, bottom: 8.0, left: 12.0, right: 12.0),
                       decoration: BoxDecoration(
                           color: Colors.white,
+                          image: DecorationImage(
+                            opacity: 0.09,
+                            image: AssetImage("assets/images/landt.png"),
+                          ),
                           borderRadius: BorderRadius.circular(5.0)),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
@@ -123,8 +126,10 @@ class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
                             ],
                           ),
                           Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
+                              AdminCasualDutyList(
+                                  label: "Company", labelDetails: "L & T"),
                               Padding(
                                 padding: const EdgeInsets.only(
                                     bottom: 5.0, top: 5.0),
