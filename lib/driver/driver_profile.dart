@@ -7,19 +7,17 @@ import 'package:sejaltravels_2022/driver/driver_car_document_list.dart';
 class DriverProfile extends StatefulWidget {
   const DriverProfile({Key? key}) : super(key: key);
 
-
-
   @override
   State<DriverProfile> createState() => _DriverProfileState();
 }
 
-class _DriverProfileState extends State<DriverProfile> with SingleTickerProviderStateMixin{
+class _DriverProfileState extends State<DriverProfile>
+    with SingleTickerProviderStateMixin {
   String imageUrl =
       "https://scontent.fstv3-1.fna.fbcdn.net/v/t1.6435-9/131121279_3627834227255377_3270597907143300078_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=174925&_nc_ohc=QLQSjH0TrPcAX9F78Bl&_nc_ht=scontent.fstv3-1.fna&oh=00_AT-m_A0Q2feFnmYBvitmLrMEn7itGa8A_ZGgO-PfoOuG4g&oe=62D1BC2A";
 
-   late Animation _animation;
-   late AnimationController _animationController;
-
+  late Animation _animation;
+  late AnimationController _animationController;
 
   @override
   void initState() {
@@ -31,17 +29,14 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
       duration: Duration(seconds: 2),
     );
 
-    _animation = CurvedAnimation(parent: _animationController, curve: Curves.elasticOut);
+    _animation =
+        CurvedAnimation(parent: _animationController, curve: Curves.elasticOut);
     _animationController.forward();
 
     _animation.addListener(() {
-      setState((){});
-
+      setState(() {});
     });
   }
-
-
-
 
   @override
   void dispose() {
@@ -65,13 +60,15 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                CircleAvatar(
+                  backgroundImage: NetworkImage(imageUrl, ),
+                  radius: _animation.value*60,
+                  backgroundColor: adminAppbarColor,
+
+                ),
                 Container(
-                  height: _animation.value*100,
-                  width: 100,
-                  margin: EdgeInsets.all(10.0),
-                  decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      image: DecorationImage(image: NetworkImage(imageUrl))),
+                  width: 10,
+
                 ),
                 Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                   DriverHomeLabels(
@@ -81,7 +78,7 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
                   ),
                   DriverHomeLabels(
                     driverHomelabel: "Driver Name",
-                    driverHomeLabelDetails: "Chandresh Saddiwala",
+                    driverHomeLabelDetails: "Rashmikant Patel",
                     iconData: FontAwesomeIcons.idCardClip,
                   ),
                 ]),
@@ -163,7 +160,10 @@ class _DriverProfileState extends State<DriverProfile> with SingleTickerProvider
                 borderRadius: BorderRadius.circular(5.0),
                 child: InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>DriverCarDocumentList()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DriverCarDocumentList()));
                   },
                   child: Container(
                     height: 45,

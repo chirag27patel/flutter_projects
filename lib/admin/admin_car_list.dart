@@ -52,7 +52,7 @@ class AdminCarList extends StatelessWidget {
           itemBuilder: (context, index) {
             return AnimationConfiguration.staggeredList(
               position: index,
-              duration: const Duration(milliseconds: 750),
+              duration: const Duration(milliseconds: 500),
               child: ScaleAnimation(
                 child: Container(
                   margin: EdgeInsets.only(
