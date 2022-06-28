@@ -27,7 +27,10 @@ class _AdminCarDocumentState extends State<AdminCarDocument> {
             return Container(
               margin: EdgeInsets.all(10.0),
               padding: EdgeInsets.all(5.0),
-              color: Colors.white,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(5.0),
+                color: Colors.white
+              ),
               child: Column(
                 children: [
                   Row(
@@ -107,7 +110,7 @@ class CarDocumentListTile extends StatelessWidget {
                   width: 160,
                   child: Text(
                     labelDetails,
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 )
               ],

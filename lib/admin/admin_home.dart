@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/admin/admin_car_document.dart';
+import 'package:sejaltravels_2022/admin/admin_car_invoices.dart';
 import 'package:sejaltravels_2022/admin/admin_car_list.dart';
 import 'package:sejaltravels_2022/admin/admin_casual_duty.dart';
 import 'package:sejaltravels_2022/admin/admin_casual_duty_history.dart';
@@ -236,6 +237,25 @@ class _AdminHomeState extends State<AdminHome>
                         textSize: animation.value * 28,
                         onTap: () {},
                       ),
+                    ],
+                  ),
+                  Row(
+                    children: [
+                      AdminHomeTab(
+                        imagePath: "assets/images/invoice.png",
+                        label: "Invoices",
+                        labelDetails: "22",
+                        tabColor: Colors.green.shade400,
+                        tabTextColor: Colors.white,
+                        textSize: animation.value * 28,
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => AdminCarInvoices()));
+                        },
+                      ),
+                      Expanded(child: Container()),
                     ],
                   ),
                 ],
