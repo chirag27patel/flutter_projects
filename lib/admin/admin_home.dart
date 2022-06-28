@@ -87,6 +87,7 @@ class _AdminHomeState extends State<AdminHome>
                           MaterialPageRoute(
                               builder: (context) => AdminCasualDuty(
                                     appBarTitle: "L&T",
+                                    companyImageBg: "assets/images/landt.png",
                                   )));
                     },
                   ),
@@ -103,6 +104,7 @@ class _AdminHomeState extends State<AdminHome>
                           MaterialPageRoute(
                               builder: (context) => AdminCasualDuty(
                                     appBarTitle: "AM/NS",
+                                    companyImageBg: "assets/images/amns.png",
                                   )));
                     },
                   ),

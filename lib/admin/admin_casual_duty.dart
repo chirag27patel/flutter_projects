@@ -5,8 +5,9 @@ import 'package:sejaltravels_2022/const/const.dart';
 
 class AdminCasualDuty extends StatefulWidget {
   String appBarTitle;
+  String companyImageBg;
 
-  AdminCasualDuty({required this.appBarTitle});
+  AdminCasualDuty({required this.appBarTitle, required this.companyImageBg});
 
   @override
   State<AdminCasualDuty> createState() => _AdminCasualDutyState();
@@ -24,15 +25,21 @@ class _AdminCasualDutyState extends State<AdminCasualDuty> {
           centerTitle: true,
         ),
         body: ListView.builder(
-            padding: EdgeInsets.all(8.0),
+            padding: const EdgeInsets.all(8.0),
             itemCount: 5,
             itemBuilder: (context, index) {
               return Container(
-                margin: EdgeInsets.all(8.0),
-                padding: EdgeInsets.only(
+                margin: const EdgeInsets.all(8.0),
+                padding: const EdgeInsets.only(
                     top: 8.0, bottom: 8.0, left: 12.0, right: 12.0),
                 decoration: BoxDecoration(
                     color: Colors.white,
+                    image:  DecorationImage(
+                      opacity: 0.09,
+                      image: AssetImage(
+                        widget.companyImageBg,
+                      ),
+                    ),
                     borderRadius: BorderRadius.circular(5.0)),
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
@@ -75,10 +82,12 @@ class _AdminCasualDutyState extends State<AdminCasualDuty> {
                       ],
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        AdminCasualDutyList(
+                            label: "Company", labelDetails: "L & T"),
                         Padding(
-                          padding: const EdgeInsets.only(bottom: 5.0,top: 5.0),
+                          padding: const EdgeInsets.only(bottom: 5.0, top: 5.0),
                           child: SizedBox(
                             height: 40,
                             width: 120,
@@ -94,7 +103,6 @@ class _AdminCasualDutyState extends State<AdminCasualDuty> {
                         ),
                       ],
                     ),
-
                   ],
                 ),
               );
