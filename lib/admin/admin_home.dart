@@ -6,6 +6,7 @@ import 'package:sejaltravels_2022/admin/admin_car_list.dart';
 import 'package:sejaltravels_2022/admin/admin_casual_duty.dart';
 import 'package:sejaltravels_2022/admin/admin_casual_duty_history.dart';
 import 'package:sejaltravels_2022/admin/admin_diesel_data.dart';
+import 'package:sejaltravels_2022/admin/admin_invoice_department_list.dart';
 import 'package:sejaltravels_2022/admin/admin_logbook.dart';
 import 'package:sejaltravels_2022/components/custom_components.dart';
 import 'package:sejaltravels_2022/const/const.dart';
@@ -252,7 +253,7 @@ class _AdminHomeState extends State<AdminHome>
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => AdminCarInvoices()));
+                                  builder: (context) => AdminInvoiceDepartment()));
                         },
                       ),
                       Expanded(child: Container()),

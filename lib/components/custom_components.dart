@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/const/const.dart';
@@ -98,7 +100,7 @@ class DriverHomeLabels extends StatelessWidget {
                 Text(
                   driverHomeLabelDetails,
                   textAlign: TextAlign.start,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: LabelColor,
@@ -128,39 +130,37 @@ class DriverHomeLabels2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(right: 10, top: 10, bottom: 10, left: 10),
-      child: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: Icon(
-                    iconData,
-                    size: 20,
-                    color: textColor,
-                  ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 16),
+                child: Icon(
+                  iconData,
+                  size: 20,
+                  color: textColor,
                 ),
-                Text(
-                  driverHomelabel,
-                  textAlign: TextAlign.start,
-                  style: TextStyle(fontSize: 16, color: textColor),
-                ),
-              ],
-            ),
-            Text(
-              driverHomeLabelDetails,
-              textAlign: TextAlign.start,
-              style: TextStyle(
-                fontSize: 16,
-                fontWeight: FontWeight.bold,
-                color: LabelColor,
               ),
+              Text(
+                driverHomelabel,
+                textAlign: TextAlign.start,
+                style: TextStyle(fontSize: 16, color: textColor),
+              ),
+            ],
+          ),
+          Text(
+            driverHomeLabelDetails,
+            textAlign: TextAlign.start,
+            style: const TextStyle(
+              fontSize: 16,
+              fontWeight: FontWeight.bold,
+              color: LabelColor,
             ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
@@ -189,7 +189,7 @@ class AdminHomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
-        margin: EdgeInsets.only(left: 4.0, right: 4.0, top: 4.0, bottom: 4.0),
+        margin: const EdgeInsets.only(left: 4.0, right: 4.0, top: 4.0, bottom: 4.0),
         child: Material(
           borderRadius: BorderRadius.circular(5.0),
           color: tabColor,
@@ -327,6 +327,38 @@ class CustomMaterialButton extends StatelessWidget {
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class AdminInvoiceLabel extends StatelessWidget {
+  String label;
+  String labelDetails;
+  Color labelColor;
+
+  AdminInvoiceLabel(
+      {required this.label,
+        required this.labelDetails,
+        required this.labelColor});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding:
+      const EdgeInsets.only(left: 8.0, top: 4.0, bottom: 4.0, right: 8.0),
+      child: Row(
+        children: [
+          Text(
+            label,
+            style: TextStyle(fontSize: 16),
+          ),
+          Text(
+            labelDetails,
+            style: TextStyle(
+                fontSize: 16, fontWeight: FontWeight.bold, color: labelColor),
+          ),
+        ],
       ),
     );
   }
