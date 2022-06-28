@@ -16,6 +16,8 @@ class AdminCarInvoices extends StatefulWidget {
 class _AdminCarInvoicesState extends State<AdminCarInvoices> {
 
 
+  String total = "272725";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -78,8 +80,8 @@ class _AdminCarInvoicesState extends State<AdminCarInvoices> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text("Total :",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 22),),
-                Text("₹ 2,73,000",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24,),) ,
+                 const Text("Total :",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 22),),
+                 Text("₹ $total}",style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24,),) ,
               ],
             ),
           ),
