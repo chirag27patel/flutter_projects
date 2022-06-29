@@ -312,7 +312,7 @@ class CustomMaterialButton extends StatelessWidget {
               Text(
                 buttonText.toUpperCase(),
                 style: TextStyle(
-                    fontSize: 14,
+                    fontSize: textHeight,
                     color: iconColor,
                     fontWeight: FontWeight.bold),
               ),
@@ -360,6 +360,27 @@ class AdminInvoiceLabel extends StatelessWidget {
           ),
         ],
       ),
+    );
+  }
+}
+
+class TextFieldLabel extends StatelessWidget {
+
+  String textFieldLabel;
+
+
+  TextFieldLabel({required this.textFieldLabel});
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(top: 8,bottom: 4,left: 4),
+          child: Text(textFieldLabel),
+        ),
+      ],
     );
   }
 }

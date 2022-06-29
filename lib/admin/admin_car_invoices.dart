@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/components/custom_components.dart';
+import 'package:sejaltravels_2022/components/custom_raised_button.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
 class AdminCarInvoices extends StatefulWidget {
-
   String departmentName;
-
 
   AdminCarInvoices({required this.departmentName});
 
@@ -14,8 +14,6 @@ class AdminCarInvoices extends StatefulWidget {
 }
 
 class _AdminCarInvoicesState extends State<AdminCarInvoices> {
-
-
   String total = "272725";
 
   @override
@@ -26,9 +24,8 @@ class _AdminCarInvoicesState extends State<AdminCarInvoices> {
         backgroundColor: adminAppbarColor,
         elevation: 0.0,
         centerTitle: true,
-        title:  Text(widget.departmentName),
+        title: Text(widget.departmentName),
       ),
-
       body: Column(
         children: [
           Expanded(
@@ -67,6 +64,19 @@ class _AdminCarInvoicesState extends State<AdminCarInvoices> {
                               label: "Payment Status : ",
                               labelDetails: "Pending",
                               labelColor: Colors.red),
+                          AdminInvoiceLabel(
+                              label: "Invoice Type : ",
+                              labelDetails: "Monthly",
+                              labelColor: Colors.black),
+                          CustomMaterialButton(
+                            borderRadius: 5.0,
+                            iconData: Icons.edit,
+                            buttonColor: Colors.grey.shade800,
+                            buttonHeight: 40,
+                            buttonText: 'Edit',
+                            iconColor: Colors.white,
+                            textHeight: 16,
+                          )
                         ],
                       ),
                     ),
@@ -74,14 +84,27 @@ class _AdminCarInvoicesState extends State<AdminCarInvoices> {
                 }),
           ),
           Container(
-             height: 55,
+            height: 55,
             color: Colors.redAccent,
             alignment: Alignment.center,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                 const Text("Total :",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 22),),
-                 Text("₹ $total",style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24,),) ,
+                const Text(
+                  "Total :",
+                  style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 22),
+                ),
+                Text(
+                  "₹ $total",
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 24,
+                  ),
+                ),
               ],
             ),
           ),
