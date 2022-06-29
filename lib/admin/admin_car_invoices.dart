@@ -81,7 +81,7 @@ class _AdminCarInvoicesState extends State<AdminCarInvoices> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                  const Text("Total :",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 22),),
-                 Text("₹ $total}",style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24,),) ,
+                 Text("₹ $total",style: const TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 24,),) ,
               ],
             ),
           ),

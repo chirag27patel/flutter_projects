@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sejaltravels_2022/admin/admin_add_invoice.dart';
 import 'package:sejaltravels_2022/admin/admin_car_invoices.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
@@ -89,7 +90,9 @@ class _AdminInvoiceDepartmentState extends State<AdminInvoiceDepartment> {
               color: adminAppbarColor,
               borderRadius: BorderRadius.circular(50.0),
               child: InkWell(
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>const AdminAddInvoice()));
+                },
                 splashColor: Colors.black,
                 borderRadius: BorderRadius.circular(50.0),
                 child: Container(
@@ -97,8 +100,8 @@ class _AdminInvoiceDepartmentState extends State<AdminInvoiceDepartment> {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      Text("Add Invoices",style: TextStyle(fontSize: 18,color: Colors.white),),
-                      Icon(FontAwesomeIcons.circlePlus,color: Colors.white),
+                       Text("Add Invoices",style: TextStyle(fontSize: 18,color: Colors.white),),
+                       Icon(FontAwesomeIcons.circlePlus,color: Colors.white),
                     ],
                   ),
                 ),

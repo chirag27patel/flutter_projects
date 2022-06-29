@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/admin/admin_car_document.dart';
-import 'package:sejaltravels_2022/admin/admin_car_invoices.dart';
 import 'package:sejaltravels_2022/admin/admin_car_list.dart';
 import 'package:sejaltravels_2022/admin/admin_casual_duty.dart';
 import 'package:sejaltravels_2022/admin/admin_casual_duty_history.dart';
@@ -60,12 +59,12 @@ class _AdminHomeState extends State<AdminHome>
 
               },
               child: Row(
-                children: [
+                children: const [
                   Text("Logout",style: TextStyle(color: Colors.white),),
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding: EdgeInsets.all(8.0),
                     child: Icon(
-                      FontAwesomeIcons.signOut,
+                      FontAwesomeIcons.rightFromBracket,
                       color: Colors.white,
                       size: 16,
                     ),
@@ -79,9 +78,9 @@ class _AdminHomeState extends State<AdminHome>
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(top: 16.0, left: 8),
+                  padding: EdgeInsets.only(top: 16.0, left: 8),
                   child: Text(
                     "Today's Casual Trips",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
@@ -134,9 +133,9 @@ class _AdminHomeState extends State<AdminHome>
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.start,
-              children: [
+              children: const [
                 Padding(
-                  padding: const EdgeInsets.only(top: 12.0, left: 8),
+                  padding: EdgeInsets.only(top: 12.0, left: 8),
                   child: Text(
                     "Monthly Car Details",
                     style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
