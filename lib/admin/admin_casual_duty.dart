@@ -94,6 +94,7 @@ class _AdminCasualDutyState extends State<AdminCasualDuty> {
                             height: 40,
                             width: 120,
                             child: CustomMaterialButton(
+                                function: (){},
                                 buttonText: "Details",
                                 iconData: FontAwesomeIcons.list,
                                 iconColor: Colors.white,

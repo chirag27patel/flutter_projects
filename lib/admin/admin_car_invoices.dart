@@ -69,6 +69,7 @@ class _AdminCarInvoicesState extends State<AdminCarInvoices> {
                               labelDetails: "Monthly",
                               labelColor: Colors.black),
                           CustomMaterialButton(
+                            function: (){},
                             borderRadius: 5.0,
                             iconData: Icons.edit,
                             buttonColor: Colors.grey.shade800,

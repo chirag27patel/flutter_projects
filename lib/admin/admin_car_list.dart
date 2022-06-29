@@ -105,6 +105,7 @@ class AdminCarList extends StatelessWidget {
                           children: [
                             Expanded(
                               child: CustomMaterialButton(
+                                  function: (){},
                                   buttonText: "Document",
                                   iconData: FontAwesomeIcons.solidFolderClosed,
                                   iconColor: Colors.white,
@@ -118,6 +119,7 @@ class AdminCarList extends StatelessWidget {
                             ),
                             Expanded(
                               child: CustomMaterialButton(
+                                  function: (){},
                                   buttonText: "Diesel",
                                   iconData: FontAwesomeIcons.gasPump,
                                   iconColor: Colors.black,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sejaltravels_2022/admin/admin_car_disel_data.dart';
 import 'package:sejaltravels_2022/admin/admin_home.dart';
 import 'package:sejaltravels_2022/components/custom_components.dart';
 import 'package:sejaltravels_2022/const/const.dart';
@@ -58,7 +59,7 @@ class _AdminDieselDataState extends State<AdminDieselData>
         centerTitle: true,
         backgroundColor: adminAppbarColor,
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(FontAwesomeIcons.plus))
+          IconButton(onPressed: () {}, icon: Icon(FontAwesomeIcons.plus))
         ],
       ),
       body: SingleChildScrollView(
@@ -87,11 +88,25 @@ class _AdminDieselDataState extends State<AdminDieselData>
                   ),
                 ],
               ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: CustomMaterialButton(
+                    function: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AdminCarDieselData()));
+                    },
+                    buttonText: "Car Diesel Data",
+                    iconData: Icons.local_gas_station,
+                    iconColor: Colors.white,
+                    buttonColor: adminAppbarColor,
+                    borderRadius: 0.0,
+                    buttonHeight: 55,
+                    textHeight: 16),
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
-                children: [
+                children: const [
                   Padding(
-                    padding: const EdgeInsets.only(left: 8, top: 10),
+                    padding: EdgeInsets.only(left: 8, top: 10),
                     child: Text(
                       "Transaction Details",
                       style:
@@ -118,7 +133,7 @@ class _AdminDieselDataState extends State<AdminDieselData>
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Row(
-                                children: [
+                                children: const [
                                   Text(
                                     "Amount : ",
                                     style: TextStyle(
@@ -137,7 +152,7 @@ class _AdminDieselDataState extends State<AdminDieselData>
                                 height: 5,
                               ),
                               Row(
-                                children: [
+                                children: const [
                                   Text(
                                     "Status : ",
                                     style: TextStyle(
@@ -149,10 +164,8 @@ class _AdminDieselDataState extends State<AdminDieselData>
                                     style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.green
-                                    ),
+                                        color: Colors.green),
                                   ),
-
                                 ],
                               ),
                             ],
@@ -214,7 +227,10 @@ class AdminDieselTab extends StatelessWidget {
                   ),
                   Text(
                     labelDetails,
-                    style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold,color: adminAppbarColor),
+                    style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                        color: adminAppbarColor),
                   ),
                 ],
               ),

@@ -275,14 +275,6 @@ class AdminCasualDutyList extends StatelessWidget {
 }
 
 class CustomMaterialButton extends StatelessWidget {
-  String buttonText;
-  IconData iconData;
-  Color iconColor;
-  Color buttonColor;
-  double borderRadius;
-  double buttonHeight;
-  double textHeight;
-
 
   CustomMaterialButton(
       {required this.buttonText,
@@ -292,15 +284,23 @@ class CustomMaterialButton extends StatelessWidget {
       required this.borderRadius,
       required this.buttonHeight,
       required this.textHeight,
+      required this.function,
       });
-
+  String buttonText;
+  IconData iconData;
+  Color iconColor;
+  Color buttonColor;
+  double borderRadius;
+  double buttonHeight;
+  double textHeight;
+  VoidCallback function;
   @override
   Widget build(BuildContext context) {
     return Material(
       color: buttonColor,
       borderRadius: BorderRadius.circular(borderRadius),
       child: InkWell(
-        onTap: () {},
+        onTap: function,
         splashColor: Colors.black,
         borderRadius: BorderRadius.circular(borderRadius),
         child: Container(
