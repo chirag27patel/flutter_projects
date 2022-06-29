@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sejaltravels_2022/admin/admin_add_car_diesel_data.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
 class AdminCarDieselData extends StatelessWidget {
@@ -15,12 +16,14 @@ class AdminCarDieselData extends StatelessWidget {
         centerTitle: true,
         title: const Text("Car Diesel Data"),
         actions: [
-          IconButton(onPressed: (){}, icon: Icon(FontAwesomeIcons.plus))
+          IconButton(onPressed: (){
+            Navigator.push(context, MaterialPageRoute(builder: (context)=>const AdminAddCarDiesel()));
+          }, icon: const Icon(FontAwesomeIcons.plus))
         ],
       ),
       body: ListView.separated(
         itemCount: 25,
-        padding: EdgeInsets.only(top: 10,bottom: 10),
+        padding: const EdgeInsets.only(top: 10,bottom: 10),
         separatorBuilder: (BuildContext context, int index) {
           if (index % 5 == 0) { // Display `AdmobBanner` every 5 'separators'.
             return Row(
@@ -29,8 +32,8 @@ class AdminCarDieselData extends StatelessWidget {
                 Container(
 
                   alignment: Alignment.center,
-                  margin: EdgeInsets.only(top: 5.0,bottom: 5.0),
-                  padding: EdgeInsets.symmetric(vertical: 5.0,horizontal: 10.0),
+                  margin: const EdgeInsets.only(top: 5.0,bottom: 5.0),
+                  padding: const EdgeInsets.symmetric(vertical: 5.0,horizontal: 10.0),
                   child: Text("February".toUpperCase()),
                   decoration: BoxDecoration(
                     color: Colors.grey.withOpacity(0.5),
@@ -138,7 +141,7 @@ class AdminCarDieselData extends StatelessWidget {
                     ),
                     const Text(
                       "5000 ",
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.w900,
                           color: adminAppbarColor),
