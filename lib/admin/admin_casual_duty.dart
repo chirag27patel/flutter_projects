@@ -35,12 +35,7 @@ class _AdminCasualDutyState extends State<AdminCasualDuty> {
                     top: 8.0, bottom: 8.0, left: 12.0, right: 12.0),
                 decoration: BoxDecoration(
                     color: Colors.white,
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black54,
-                        blurRadius: 10.0
-                      ),
-                    ],
+
                     image:  DecorationImage(
                       opacity: 0.09,
                       image: AssetImage(
