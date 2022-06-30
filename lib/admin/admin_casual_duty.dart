@@ -54,7 +54,19 @@ class _AdminCasualDutyState extends State<AdminCasualDuty> {
                         Expanded(child: Container()),
                         Expanded(
                             child: AdminCasualDutyList(
-                                label: "To", labelDetails: "Mumbai Airport ")),
+                                label: "To", labelDetails: "Mumbai")),
+                      ],
+                    ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Expanded(
+                            child: AdminCasualDutyList(
+                                label: "User Name", labelDetails: "Chirag Patel")),
+                        Expanded(child: Container()),
+                        Expanded(
+                            child: AdminCasualDutyList(
+                                label: "Mobile", labelDetails: "8141934349")),
                       ],
                     ),
                     Row(
