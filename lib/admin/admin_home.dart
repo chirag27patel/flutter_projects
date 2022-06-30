@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sejaltravels_2022/SignInPage.dart';
 import 'package:sejaltravels_2022/admin/admin_car_document.dart';
 import 'package:sejaltravels_2022/admin/admin_car_list.dart';
 import 'package:sejaltravels_2022/admin/admin_casual_duty.dart';
@@ -56,11 +57,15 @@ class _AdminHomeState extends State<AdminHome>
         actions: [
           TextButton(
               onPressed: () {
-
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SignInPage()));
               },
               child: Row(
                 children: const [
-                  Text("Logout",style: TextStyle(color: Colors.white),),
+                  Text(
+                    "Logout",
+                    style: TextStyle(color: Colors.white),
+                  ),
                   Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Icon(
@@ -252,7 +257,8 @@ class _AdminHomeState extends State<AdminHome>
                           Navigator.push(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => AdminInvoiceDepartment()));
+                                  builder: (context) =>
+                                      AdminInvoiceDepartment()));
                         },
                       ),
                       Expanded(child: Container()),
