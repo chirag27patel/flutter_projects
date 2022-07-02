@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/admin/admin_car_disel_data.dart';
 import 'package:sejaltravels_2022/admin/admin_home.dart';
@@ -20,31 +21,21 @@ class _AdminDieselDataState extends State<AdminDieselData>
 
   @override
   void initState() {
-    _controller = AnimationController(
-      vsync: this,
-      duration: Duration(
-        milliseconds: 100,
-      ),
-      lowerBound: 0.0,
-      upperBound: 0.1,
-    )..addListener(() {
-        setState(() {});
-      });
+    _controller =
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
+    _controller.addListener(() {
+      setState(() {});
+    });
+    _controller.forward();
     super.initState();
   }
+
+
 
   @override
   void dispose() {
     super.dispose();
     _controller.dispose();
-  }
-
-  void _tapDown(TapDownDetails details) {
-    _controller.forward();
-  }
-
-  void _tapUp(TapUpDetails details) {
-    _controller.reverse();
   }
 
   @override
@@ -91,8 +82,11 @@ class _AdminDieselDataState extends State<AdminDieselData>
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: CustomMaterialButton(
-                    function: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>AdminCarDieselData()));
+                    function: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AdminCarDieselData()));
                     },
                     buttonText: "Car Diesel Data",
                     iconData: Icons.local_gas_station,
@@ -120,78 +114,84 @@ class _AdminDieselDataState extends State<AdminDieselData>
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   itemBuilder: (context, index) {
-                    return Container(
-                      margin: EdgeInsets.only(
-                          left: 8.0, right: 8.0, top: 8.0, bottom: 8.0),
-                      padding: EdgeInsets.only(
-                          top: 16.0, bottom: 16.0, left: 16.0, right: 16.0),
-                      color: Colors.white,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                    return AnimationConfiguration.staggeredList(
+                      position: index,
+                      duration: const Duration(milliseconds: 500),
+                      child: ScaleAnimation(
+                        child: Container(
+                          margin: EdgeInsets.only(
+                              left: 8.0, right: 8.0, top: 8.0, bottom: 8.0),
+                          padding: EdgeInsets.only(
+                              top: 16.0, bottom: 16.0, left: 16.0, right: 16.0),
+                          color: Colors.white,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Row(
-                                children: const [
-                                  Text(
-                                    "Amount : ",
-                                    style: TextStyle(
-                                      fontSize: 18,
-                                    ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: const [
+                                      Text(
+                                        "Amount : ",
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                      Text(
+                                        "55000",
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                    ],
                                   ),
-                                  Text(
-                                    "55000",
-                                    style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold),
+                                  Container(
+                                    height: 5,
+                                  ),
+                                  Row(
+                                    children: const [
+                                      Text(
+                                        "Status : ",
+                                        style: TextStyle(
+                                          fontSize: 18,
+                                        ),
+                                      ),
+                                      Text(
+                                        "Paid",
+                                        style: TextStyle(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.bold,
+                                            color: Colors.green),
+                                      ),
+                                    ],
                                   ),
                                 ],
                               ),
-                              Container(
-                                height: 5,
-                              ),
                               Row(
-                                children: const [
-                                  Text(
-                                    "Status : ",
-                                    style: TextStyle(
-                                      fontSize: 18,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        right: 2.0, bottom: 2.0),
+                                    child: Icon(
+                                      FontAwesomeIcons.calendar,
+                                      color: textColor,
+                                      size: 14,
                                     ),
                                   ),
                                   Text(
-                                    "Paid",
+                                    "15/11/2022",
                                     style: TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.green),
+                                      fontSize: 14,
+                                      color: textColor,
+                                    ),
                                   ),
                                 ],
                               ),
                             ],
                           ),
-                          Row(
-                            crossAxisAlignment: CrossAxisAlignment.center,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.only(
-                                    right: 2.0, bottom: 2.0),
-                                child: Icon(
-                                  FontAwesomeIcons.calendar,
-                                  color: textColor,
-                                  size: 14,
-                                ),
-                              ),
-                              Text(
-                                "15/11/2022",
-                                style: TextStyle(
-                                  fontSize: 14,
-                                  color: textColor,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
+                        ),
                       ),
                     );
                   }),
