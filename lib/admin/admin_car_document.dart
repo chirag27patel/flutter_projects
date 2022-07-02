@@ -17,16 +17,16 @@ class _AdminCarDocumentState extends State<AdminCarDocument> {
       appBar: AppBar(
         backgroundColor: adminAppbarColor,
         elevation: 0.0,
-        title: Text("Document List"),
+        title: const Text("Document List"),
         centerTitle: true,
       ),
       body: ListView.builder(
           itemCount: 10,
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           itemBuilder: (context, index) {
             return Container(
-              margin: EdgeInsets.all(10.0),
-              padding: EdgeInsets.all(5.0),
+              margin: const EdgeInsets.all(10.0),
+              padding: const EdgeInsets.all(5.0),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(5.0),
                 color: Colors.white
@@ -54,8 +54,11 @@ class _AdminCarDocumentState extends State<AdminCarDocument> {
                       Padding(
                         padding: const EdgeInsets.all(8.0),
                         child: TextButton(
+                          style: ButtonStyle(
+                            overlayColor: MaterialStateColor.resolveWith((states) => adminAppbarColor.withOpacity(0.1)),
+                          ),
                           onPressed: () {},
-                          child: Text(
+                          child: const Text(
                             "View",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold,
@@ -110,7 +113,7 @@ class CarDocumentListTile extends StatelessWidget {
                   width: 160,
                   child: Text(
                     labelDetails,
-                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                    style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
                   ),
                 )
               ],
