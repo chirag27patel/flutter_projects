@@ -109,30 +109,30 @@ class _SignInPageState extends State<SignInPage> {
               ),
             ],
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 0),
-                child: Text(
-                  "Forgot Password?",
-                  style: TextStyle(fontSize: 16, color: textColor),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: TextButton(
-                  onPressed: () {},
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 5),
                   child: Text(
-                    "Click here",
-                    style: TextStyle(
-                        fontSize: 16,
-                        color: LabelColor,
-                        fontWeight: FontWeight.bold),
+                    "Forgot Password?",
+                    style: TextStyle(fontSize: 16, color: textColor),
                   ),
                 ),
-              )
-            ],
+               InkWell(
+                 onTap: (){},
+                 child:Text(
+                   "Click here",
+                   style: TextStyle(
+                       fontSize: 16,
+                       color: LabelColor,
+                       fontWeight: FontWeight.bold),
+                 ),
+               )
+              ],
+            ),
           ),
         ],
       ),
