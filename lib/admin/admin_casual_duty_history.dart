@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:sejaltravels_2022/components/custom_components.dart';
 import 'package:sejaltravels_2022/const/const.dart';
+import 'package:sejaltravels_2022/utils/utils.dart';
 import 'package:table_calendar/table_calendar.dart';
 
 class AdminCasualDutyHistory extends StatefulWidget {
@@ -12,20 +13,29 @@ class AdminCasualDutyHistory extends StatefulWidget {
 }
 
 class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
-
   DateTime _selectedDay = DateTime.now();
   CalendarFormat format = CalendarFormat.month;
   DateTime _focusedDay = DateTime.now();
   int itemCount = 0;
 
+  List<Event> _getEventsForDay(DateTime day) {
+    // Implementation example
+    return kEvents[day] ?? [];
+  }
 
+  List<Event> _getEventsForRange(DateTime start, DateTime end) {
+    // Implementation example
+    final days = daysInRange(start, end);
 
+    return [
+      for (final d in days) ..._getEventsForDay(d),
+    ];
+  }
 
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-
   }
 
   @override
@@ -46,7 +56,6 @@ class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
               lastDay: DateTime.utc(2030, 3, 14),
               calendarFormat: format,
               focusedDay: _selectedDay,
-
               onDaySelected: (selectedDay, focusedDay) {
                 setState(() {
                   _selectedDay = selectedDay;
@@ -149,7 +158,7 @@ class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
                                   height: 40,
                                   width: 120,
                                   child: CustomMaterialButton(
-                                      function: (){},
+                                      function: () {},
                                       buttonText: "Details",
                                       iconData: FontAwesomeIcons.list,
                                       iconColor: Colors.white,
