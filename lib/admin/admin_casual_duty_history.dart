@@ -12,10 +12,21 @@ class AdminCasualDutyHistory extends StatefulWidget {
 }
 
 class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
+
   DateTime _selectedDay = DateTime.now();
   CalendarFormat format = CalendarFormat.month;
   DateTime _focusedDay = DateTime.now();
   int itemCount = 0;
+
+
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +36,7 @@ class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
         backgroundColor: adminAppbarColor,
         elevation: 0.0,
         centerTitle: true,
-        title: Text("Casual Duties"),
+        title: const Text("Casual Duties"),
       ),
       body: Container(
         child: Column(
@@ -35,6 +46,7 @@ class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
               lastDay: DateTime.utc(2030, 3, 14),
               calendarFormat: format,
               focusedDay: _selectedDay,
+
               onDaySelected: (selectedDay, focusedDay) {
                 setState(() {
                   _selectedDay = selectedDay;
@@ -66,15 +78,15 @@ class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
               child: ListView.builder(
                   itemCount: itemCount,
                   shrinkWrap: true,
-                  padding: EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(8.0),
                   itemBuilder: (context, index) {
                     return Container(
-                      margin: EdgeInsets.all(8.0),
-                      padding: EdgeInsets.only(
+                      margin: const EdgeInsets.all(8.0),
+                      padding: const EdgeInsets.only(
                           top: 8.0, bottom: 8.0, left: 12.0, right: 12.0),
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          image: DecorationImage(
+                          image: const DecorationImage(
                             opacity: 0.09,
                             image: AssetImage("assets/images/landt.png"),
                           ),

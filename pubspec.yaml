@@ -98,6 +98,9 @@ flutter:
     - family: roboto
       fonts:
         - asset: assets/fonts/roboto.ttf
+    - family: playfair
+      fonts:
+        - asset: assets/fonts/playfair.ttf
 
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic

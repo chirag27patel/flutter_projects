@@ -41,6 +41,16 @@ class _SignInPageState extends State<SignInPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset("assets/images/sejallogo.png",height: 60,width: 60,),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
+                child: Text("Sejal Travels", style: TextStyle(fontSize: 42,fontWeight: FontWeight.bold,fontFamily: "playfair",letterSpacing: 0.5),),
+              )
+            ],
+          ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: CustomTextField(
