@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sejaltravels_2022/admin/admin_home.dart';
 import 'package:sejaltravels_2022/components/custom_textfield.dart';
 import 'package:sejaltravels_2022/const/const.dart';
-import 'dart:math' as math;
 import 'package:sejaltravels_2022/driver/driver_home.dart';
 
 class SignInPage extends StatefulWidget {
@@ -36,7 +35,7 @@ class _SignInPageState extends State<SignInPage> {
       appBar: AppBar(
         elevation: 0.0,
         centerTitle: true,
-        title: Text("Sign In Page"),
+        title: const Text("Sign In Page"),
         backgroundColor: LabelColor,
       ),
       body: Column(
@@ -91,12 +90,12 @@ class _SignInPageState extends State<SignInPage> {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => AdminHome()));
+                                builder: (context) => const AdminHome()));
                       } else {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => DriverHome()));
+                                builder: (context) => const DriverHome()));
                       }
                     },
                     child: const Text(
@@ -123,9 +122,9 @@ class _SignInPageState extends State<SignInPage> {
                 ),
                InkWell(
                  onTap: (){},
-                 child:Text(
+                 child:const Text(
                    "Click here",
-                   style: TextStyle(
+                   style:  TextStyle(
                        fontSize: 16,
                        color: LabelColor,
                        fontWeight: FontWeight.bold),
