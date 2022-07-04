@@ -43,8 +43,7 @@ class _SignInPageState extends State<SignInPage> {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: CustomTextField(
               hintText: 'Login Id',
               textEditingController: loginIdController,
@@ -58,8 +57,7 @@ class _SignInPageState extends State<SignInPage> {
             ),
           ),
           Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 5),
             child: CustomTextField(
               hintText: 'Password',
               textEditingController: passwordController,
@@ -76,8 +74,8 @@ class _SignInPageState extends State<SignInPage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 20, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
                 child: SizedBox(
                   height: 55,
                   child: ElevatedButton(
@@ -87,10 +85,9 @@ class _SignInPageState extends State<SignInPage> {
                     onPressed: () {
                       if (loginIdController.text.isEmpty ||
                           passwordController.text.isEmpty) {
-                        ScaffoldMessenger.of(context)
-                            .showSnackBar(snackBar);
+                        ScaffoldMessenger.of(context).showSnackBar(snackBar);
                       } else if (loginIdController.text == "admin" &&
-                          passwordController.text == "admin" ) {
+                          passwordController.text == "admin") {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -104,8 +101,8 @@ class _SignInPageState extends State<SignInPage> {
                     },
                     child: const Text(
                       "Sing In",
-                      style: TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.bold),
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),
@@ -116,14 +113,23 @@ class _SignInPageState extends State<SignInPage> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               Padding(
-                padding: const EdgeInsets.only(right: 5),
-                child: Text("Forgot Password?",style: TextStyle(fontSize: 16,color: textColor),),
+                padding: const EdgeInsets.only(right: 0),
+                child: Text(
+                  "Forgot Password?",
+                  style: TextStyle(fontSize: 16, color: textColor),
+                ),
               ),
-              InkWell(
-
-                child: Padding(
-                  padding: const EdgeInsets.only(right: 20),
-                  child: Text("Click here",style: TextStyle(fontSize: 16,color: LabelColor,fontWeight: FontWeight.bold),),
+              Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child: TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Click here",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: LabelColor,
+                        fontWeight: FontWeight.bold),
+                  ),
                 ),
               )
             ],
