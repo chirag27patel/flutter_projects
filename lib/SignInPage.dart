@@ -112,6 +112,22 @@ class _SignInPageState extends State<SignInPage> {
               ),
             ],
           ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 5),
+                child: Text("Forgot Password?",style: TextStyle(fontSize: 16,color: textColor),),
+              ),
+              InkWell(
+
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 20),
+                  child: Text("Click here",style: TextStyle(fontSize: 16,color: LabelColor,fontWeight: FontWeight.bold),),
+                ),
+              )
+            ],
+          ),
         ],
       ),
     );
