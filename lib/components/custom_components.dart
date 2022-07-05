@@ -78,10 +78,13 @@ class DriverHomeLabels extends StatelessWidget {
       child: Container(
         child: Row(
           children: [
-            Icon(
-              iconData,
-              color: LabelColor,
-              size: 22,
+            Padding(
+              padding: const EdgeInsets.only(right:8.0),
+              child: Icon(
+                iconData,
+                color: LabelColor,
+                size: 22,
+              ),
             ),
             Container(
               width: 8,

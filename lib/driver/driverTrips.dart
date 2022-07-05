@@ -2,6 +2,7 @@ import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:sejaltravels_2022/components/custom_components.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
 class DriverTrips extends StatefulWidget {
@@ -13,8 +14,6 @@ class DriverTrips extends StatefulWidget {
 
 class _DriverTripsState extends State<DriverTrips> {
   double fontsize = 14.0;
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -32,13 +31,19 @@ class _DriverTripsState extends State<DriverTrips> {
           itemBuilder: (context, index) {
             return AnimationConfiguration.staggeredList(
               position: index,
-              duration: const Duration(milliseconds: 750),
+              duration: const Duration(milliseconds: 500),
               child: ScaleAnimation(
-                child: DriverHomeList(
-                  carType: "Swift",
-                  destination: "Mumbai Airport",
-                  rate: "14 rs",
-                  tripType: "One way",
+                child: DriverCasualDutyList(
+                  from: "Gate No.1",
+                  to: "Mumbai",
+                  companyName: "L&T",
+                  startingDate: "Jan 14,2022",
+                  endingDate: "Jan 14,2022",
+                  startingTime: "08:00 AM",
+                  endingTime: "08:00 PM",
+                  mobileNumber: "8141934349",
+                  userName: "Chirag Patel",
+                  imagePath: "assets/images/amns.png",
                 ),
               ),
             );
@@ -47,172 +52,124 @@ class _DriverTripsState extends State<DriverTrips> {
   }
 }
 
+
+
+
+
 //list design
-class DriverHomeList extends StatelessWidget {
-  String carType = "";
-  String destination = "";
+class DriverCasualDutyList extends StatelessWidget {
+  String from = "";
+  String to = "";
+  String userName = "";
+  String mobileNumber = "";
+  String startingDate = "";
+  String endingDate = "";
+  String startingTime = "";
+  String endingTime = "";
+  String companyName = "";
+  String imagePath = "";
 
-  String rate = "";
-  String tripType = "";
-
-  DriverHomeList(
-      {required this.carType,
-      required this.destination,
-      required this.rate,
-      required this.tripType});
+  DriverCasualDutyList({
+    required this.from,
+    required this.to,
+    required this.userName,
+    required this.mobileNumber,
+    required this.startingDate,
+    required this.endingDate,
+    required this.startingTime,
+    required this.endingTime,
+    required this.companyName,
+    required this.imagePath,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
+      margin: const EdgeInsets.all(8.0),
+      padding:
+          const EdgeInsets.only(top: 8.0, bottom: 8.0, left: 12.0, right: 12.0),
       decoration: BoxDecoration(
-        color: Colors.white,
-        // border: Border.all(color: Colors.black, width: 2),
-        borderRadius: BorderRadius.circular(5.0),
-      ),
+          color: Colors.white,
+          image: DecorationImage(
+            opacity: 0.09,
+            image: AssetImage(
+              imagePath,
+            ),
+          ),
+          borderRadius: BorderRadius.circular(5.0)),
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
-          //Car And Price Widget
-          Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 10),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Icon(FontAwesomeIcons.car,
-                      size: 35, color: LabelColor),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    child: Text(
-                      carType,
-                      style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: LabelColor),
-                    ),
-                  ),
-                  Column(
-                    children: const [
-                      Text(
-                        "Final cost",
-                        style: TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.grey),
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(top: 8.0),
-                        child: Text(
-                          "5000",
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: LabelColor),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Expanded(
+                  child:
+                      AdminCasualDutyList(label: "From", labelDetails: from)),
+              Expanded(child: Container()),
+              Expanded(
+                  child: AdminCasualDutyList(label: "To", labelDetails: to)),
+            ],
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              DottedLine(
-                dashLength: 10,
-                dashGapLength: 2,
-                lineThickness: 2,
-                direction: Axis.horizontal,
-                dashColor: LabelColor,
-                dashGapColor: Colors.white,
-                lineLength: MediaQuery.of(context).size.width/1.2,
+              Expanded(
+                  child: AdminCasualDutyList(
+                      label: "User Name", labelDetails: userName)),
+              Expanded(child: Container()),
+              Expanded(
+                  child: AdminCasualDutyList(
+                      label: "Mobile", labelDetails: mobileNumber)),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: AdminCasualDutyList(
+                    label: "Starting", labelDetails: startingDate),
+              ),
+              Expanded(child: Container()),
+              Expanded(
+                child: AdminCasualDutyList(
+                    label: "Ending", labelDetails: endingDate),
               ),
             ],
           ),
-          Padding(
-            padding: const EdgeInsets.all(10),
-            child: Row(
-              children: [
-                const Icon(FontAwesomeIcons.locationDot,
-                    size: 18, color: LabelColor),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    child: Text(
-                      destination,
-                      style: const TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: LabelColor),
-                    ),
-                  ),
-                ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 15),
-                  child: Text(
-                    "12:30 PM",
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey),
-                  ),
-                ),
-              ],
-            ),
-          ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
             children: [
-               Padding(
-                padding: const EdgeInsets.only(left: 18.0),
-                child: DottedLine(
-                  dashLength: 10,
-                  dashGapLength: 3,
-                  lineThickness: 2,
-                  direction: Axis.vertical,
-                  dashColor: Colors.grey,
-                  dashGapColor: Colors.white,
-                  lineLength: 50,
-                ),
+              Expanded(
+                child: AdminCasualDutyList(
+                    label: "Starting Time", labelDetails: startingTime),
+              ),
+              Expanded(child: Container()),
+              Expanded(
+                child: AdminCasualDutyList(
+                    label: "Ending Time", labelDetails: endingTime),
               ),
             ],
           ),
-          Padding(
-            padding:
-                const EdgeInsets.only(bottom: 25, top: 10, left: 10, right: 10),
-            child: Row(
-              children: [
-                Icon(FontAwesomeIcons.locationDot,
-                    size: 18, color: LabelColor),
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 15),
-                    child: Text(
-                      destination,
-                      style: TextStyle(
-                          fontSize: 18,
-                          fontWeight: FontWeight.bold,
-                          color: LabelColor),
-                    ),
-                  ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              AdminCasualDutyList(label: "Company", labelDetails: companyName),
+              Padding(
+                padding: const EdgeInsets.only(bottom: 5.0, top: 5.0),
+                child: SizedBox(
+                  height: 40,
+                  width: 120,
+                  child: CustomMaterialButton(
+                      function: () {},
+                      buttonText: "Details",
+                      iconData: FontAwesomeIcons.list,
+                      iconColor: Colors.white,
+                      buttonColor: LabelColor,
+                      borderRadius: 5.0,
+                      buttonHeight: 35,
+                      textHeight: 14),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 15),
-                  child: Text(
-                    "12:30 PM",
-                    style: TextStyle(
-                        fontSize: 14,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.grey),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ],
       ),

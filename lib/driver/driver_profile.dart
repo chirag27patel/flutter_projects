@@ -85,7 +85,7 @@ class _DriverProfileState extends State<DriverProfile>
               ],
             ),
             Container(
-              margin: EdgeInsets.symmetric(vertical: 0, horizontal: 0),
+              margin: EdgeInsets.only(top: 25,bottom: 10),
               child: Column(
                 children: [
                   Column(
