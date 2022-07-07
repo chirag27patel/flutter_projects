@@ -87,12 +87,12 @@ class _AdminCasualDutyState extends State<AdminCasualDuty> {
                       children: [
                         Expanded(
                           child: AdminCasualDutyList(
-                              label: "Starting Time", labelDetails: "08:00 AM"),
+                              label: "Reporting Time", labelDetails: "08:00 AM"),
                         ),
                         Expanded(child: Container()),
                         Expanded(
                           child: AdminCasualDutyList(
-                              label: "Ending Time", labelDetails: "08:00 AM"),
+                              label: "Company", labelDetails: "L & T"),
                         ),
                       ],
                     ),
@@ -100,7 +100,7 @@ class _AdminCasualDutyState extends State<AdminCasualDuty> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AdminCasualDutyList(
-                            label: "Company", labelDetails: "L & T"),
+                            label: "Car No.", labelDetails: "GJ-21-CC-8889"),
                         Padding(
                           padding: const EdgeInsets.only(bottom: 5.0, top: 5.0),
                           child: SizedBox(
