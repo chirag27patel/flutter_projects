@@ -95,39 +95,51 @@ class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
                           top: 8.0, bottom: 8.0, left: 12.0, right: 12.0),
                       decoration: BoxDecoration(
                           color: Colors.white,
-                          image: const DecorationImage(
+
+                          image:  DecorationImage(
                             opacity: 0.09,
-                            image: AssetImage("assets/images/landt.png"),
+                            image: AssetImage(
+                              "assets/images/landt.png",
+                            ),
                           ),
                           borderRadius: BorderRadius.circular(5.0)),
                       child: Column(
                         mainAxisSize: MainAxisSize.min,
                         children: [
                           Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Expanded(
                                   child: AdminCasualDutyList(
-                                      label: "From",
-                                      labelDetails: "Gate No.1")),
+                                      label: "From", labelDetails: "Gate No.1")),
                               Expanded(child: Container()),
                               Expanded(
                                   child: AdminCasualDutyList(
-                                      label: "To",
-                                      labelDetails: "Mumbai Airport ")),
+                                      label: "To", labelDetails: "Mumbai")),
+                            ],
+                          ),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                  child: AdminCasualDutyList(
+                                      label: "User Name", labelDetails: "Chirag Patel")),
+                              Expanded(child: Container()),
+                              Expanded(
+                                  child: AdminCasualDutyList(
+                                      label: "Mobile", labelDetails: "8141934349")),
                             ],
                           ),
                           Row(
                             children: [
                               Expanded(
                                 child: AdminCasualDutyList(
-                                    label: "Starting",
-                                    labelDetails: "Jan 14, 2022"),
+                                    label: "Starting", labelDetails: "Jan 14, 2022"),
                               ),
                               Expanded(child: Container()),
                               Expanded(
                                 child: AdminCasualDutyList(
-                                    label: "Ending",
-                                    labelDetails: "Jan 14, 2022"),
+                                    label: "Ending", labelDetails: "Jan 14, 2022"),
                               ),
                             ],
                           ),
@@ -135,14 +147,12 @@ class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
                             children: [
                               Expanded(
                                 child: AdminCasualDutyList(
-                                    label: "Starting Time",
-                                    labelDetails: "08:00 AM"),
+                                    label: "Reporting Time", labelDetails: "08:00 AM"),
                               ),
                               Expanded(child: Container()),
                               Expanded(
                                 child: AdminCasualDutyList(
-                                    label: "Ending Time",
-                                    labelDetails: "08:00 AM"),
+                                    label: "Company", labelDetails: "L & T"),
                               ),
                             ],
                           ),
@@ -150,15 +160,14 @@ class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               AdminCasualDutyList(
-                                  label: "Company", labelDetails: "L & T"),
+                                  label: "Car No.", labelDetails: "GJ-21-CC-8889"),
                               Padding(
-                                padding: const EdgeInsets.only(
-                                    bottom: 5.0, top: 5.0),
+                                padding: const EdgeInsets.only(bottom: 5.0, top: 5.0),
                                 child: SizedBox(
                                   height: 40,
                                   width: 120,
                                   child: CustomMaterialButton(
-                                      function: () {},
+                                      function: (){},
                                       buttonText: "Details",
                                       iconData: FontAwesomeIcons.list,
                                       iconColor: Colors.white,
