@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sejaltravels_2022/admin/admin_logbook_car_list.dart';
 import 'package:sejaltravels_2022/components/custom_raised_button.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
@@ -15,6 +16,18 @@ class _AdminLogbookState extends State<AdminLogbook> {
   // Initial Selected Value
   String dropdownvalue = 'Innova';
 
+  //List of department
+  List<String> departmentList = [
+    "MFF",
+    "PIPING",
+    "HEAVY ENGINEERING",
+    "TURBINE",
+    "BOILER",
+    "AM/NS",
+    "ENGINEER INDIA LTD",
+    "SOFT SHIPYARD"
+  ];
+
   // List of items in our dropdown menu
   List<String> carList = [
     'Innova',
@@ -28,151 +41,57 @@ class _AdminLogbookState extends State<AdminLogbook> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: bgColor,
-      appBar: AppBar(
-        backgroundColor: adminAppbarColor,
-        elevation: 0.0,
-        title: Text("Admin Logbook"),
-        centerTitle: true,
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 16, bottom: 5),
-                  child: Text(
-                    "Select Car",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.0),
-                    border: Border.all(color: textColor, width: 2),
-                    color: Colors.white),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton<String>(
-                    value: dropdownvalue,
-                    icon: const Icon(
-                      Icons.arrow_drop_down,
-                      size: 42,
-                    ),
-                    elevation: 16,
-                    isExpanded: true,
-                    hint: Text("Select Car"),
-                    style: TextStyle(
-                        color: textColor,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                    underline: Container(
-                      height: 2,
-                      color: Colors.deepPurpleAccent,
-                    ),
-                    onChanged: (String? newValue) {
-                      setState(() {
-                        dropdownvalue = newValue!;
-                      });
-                    },
-                    items:
-                        carList.map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value,style: TextStyle(color: Colors.black),),
-                      );
-                    }).toList(),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              height: 20,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 16, bottom: 5),
-                  child: Text(
-                    "Select Department",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                  ),
-                ),
-              ],
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 0),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(5.0),
-                    border: Border.all(color: textColor, width: 2),
-                    color: Colors.white),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton<String>(
-                    value: dropdownvalue,
-                    icon: const Icon(
-                      Icons.arrow_drop_down,
-                      size: 42,
-                    ),
-                    elevation: 16,
-                    isExpanded: true,
-                    hint: Text("Select Car"),
-                    style: TextStyle(
-                        color: textColor,
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold),
-                    underline: Container(
-                      height: 2,
-                      color: Colors.deepPurpleAccent,
-                    ),
-                    onChanged: (String? newValue) {
-                      setState(() {
-                        dropdownvalue = newValue!;
-                      });
-                    },
-                    items:
-                        carList.map<DropdownMenuItem<String>>((String value) {
-                      return DropdownMenuItem<String>(
-                        value: value,
-                        child: Text(value,style:TextStyle(color: Colors.black)),
-                      );
-                    }).toList(),
-                  ),
-                ),
-              ),
-            ),
-            Row(
-              children: [
-                Expanded(
-                  child: Padding(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 16.0),
-                    child: SizedBox(
-                      height: 60,
-                      child: SignInButton(
-                        color: adminAppbarColor,
-                        borderRadius: BorderRadius.circular(5.0),
-                        onPressed: () {},
-                        textColor: Colors.white,
-                        text: 'Search',
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            )
-          ],
+        backgroundColor: bgColor,
+        appBar: AppBar(
+          backgroundColor: adminAppbarColor,
+          elevation: 0.0,
+          title: Text("Admin Logbook"),
+          centerTitle: true,
         ),
-      ),
-    );
+        body: ListView.builder(
+            itemCount: departmentList.length,
+            padding: EdgeInsets.all(8.0),
+            itemBuilder: (context, index) {
+          return InkWell(
+            onTap: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const AdminLogbookCarList()));
+            },
+            child: Container(
+              margin: const EdgeInsets.all(8.0),
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.only(
+                      bottomLeft: Radius.circular(5.0),
+                      bottomRight: Radius.circular(50.0),
+                      topLeft: Radius.circular(5.0),
+                      topRight: Radius.circular(50.0)
+                  )),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(16.0),
+                    child: Text(
+                      departmentList[index],
+                      style: const TextStyle(fontSize: 18),
+                    ),
+                  ),
+                  Container(
+                    height: 50,
+                    width: 50,
+                    alignment: Alignment.center,
+                    decoration: const BoxDecoration(
+                        color: adminAppbarColor, shape: BoxShape.circle),
+                    child: const Text(
+                      "20",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
+        }));
   }
 }
