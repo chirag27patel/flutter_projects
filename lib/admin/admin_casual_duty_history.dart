@@ -96,7 +96,7 @@ class _AdminCasualDutyHistoryState extends State<AdminCasualDutyHistory> {
                       decoration: BoxDecoration(
                           color: Colors.white,
 
-                          image:  DecorationImage(
+                          image:  const DecorationImage(
                             opacity: 0.09,
                             image: AssetImage(
                               "assets/images/landt.png",
