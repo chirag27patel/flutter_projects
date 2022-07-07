@@ -23,7 +23,7 @@ class _AdminAddInvoiceState extends State<AdminAddInvoice> {
           backgroundColor: adminAppbarColor,
           elevation: 0.0,
           bottom: TabBar(
-              indicatorColor: Colors.black54,
+              indicatorColor: Colors.black,
               labelColor: Colors.black,
               unselectedLabelColor: Colors.white,
               indicator: UnderlineTabIndicator(
