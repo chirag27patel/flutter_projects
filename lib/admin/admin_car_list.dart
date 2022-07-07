@@ -159,14 +159,15 @@ class AdminCarListLabel extends StatelessWidget {
           bottom: 5,
         ),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               carListLabel,
-              style: TextStyle(fontSize: 16, color: textColor),
+              style: TextStyle(fontSize: 14, color: textColor),
             ),
             Text(
               carListLabelData,
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
             ),
           ],
         ),
