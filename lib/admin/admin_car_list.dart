@@ -57,7 +57,7 @@ class AdminCarList extends StatelessWidget {
                 child: Container(
                   margin: EdgeInsets.only(
                       left: 4.0, right: 4.0, top: 8.0, bottom: 8.0),
-                  padding: EdgeInsets.all(5),
+                  padding: EdgeInsets.all(15),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5.0),
                     color: Colors.white,
@@ -71,12 +71,14 @@ class AdminCarList extends StatelessWidget {
                               carListLabelData:
                                   carDetailsData[index].ownerName,
                             alignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                           ),
                           AdminCarListLabel(
                               carListLabel: "Car Number",
                               carListLabelData:
                                   carDetailsData[index].carNumber,
                             alignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
                           ),
                         ],
                       ),
@@ -86,11 +88,13 @@ class AdminCarList extends StatelessWidget {
                               carListLabel: "Car Type",
                               carListLabelData: carDetailsData[index].carType,
                             alignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                           ),
                           AdminCarListLabel(
                               carListLabel: "Duty Type",
                               carListLabelData: carDetailsData[index].dutyType,
                             alignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
                           ),
                         ],
                       ),
@@ -101,17 +105,19 @@ class AdminCarList extends StatelessWidget {
                               carListLabelData:
                                   carDetailsData[index].driverName,
                             alignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                           ),
                           AdminCarListLabel(
                               carListLabel: "Contact No",
                               carListLabelData:
                                   carDetailsData[index].contactNo,
                             alignment: MainAxisAlignment.end,
+                            crossAxisAlignment: CrossAxisAlignment.end,
                           ),
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.all(5.0),
                         child: Row(
 
                           children: [
@@ -156,11 +162,12 @@ class AdminCarList extends StatelessWidget {
 
 class AdminCarListLabel extends StatelessWidget {
   AdminCarListLabel(
-      {required this.carListLabel, required this.carListLabelData, required this.alignment});
+      {required this.carListLabel, required this.carListLabelData, required this.alignment,required this.crossAxisAlignment});
 
   String carListLabel;
   String carListLabelData;
   MainAxisAlignment alignment;
+  CrossAxisAlignment crossAxisAlignment;
 
 
   @override
@@ -176,7 +183,7 @@ class AdminCarListLabel extends StatelessWidget {
           mainAxisAlignment: alignment,
           children: [
             Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+              crossAxisAlignment: crossAxisAlignment,
               children: [
                 Text(
                   carListLabel,

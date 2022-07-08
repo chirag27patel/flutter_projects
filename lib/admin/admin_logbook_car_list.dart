@@ -48,11 +48,13 @@ class _AdminLogbookCarListState extends State<AdminLogbookCarList> {
                           carListLabel: "Car Owner",
                           carListLabelData: "Chirag Patel",
                           alignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                       ),
                       AdminCarListLabel(
                           carListLabel: "Car Number",
                           carListLabelData: "GJ-21-CC-8884",
                         alignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                       ),
 
                     ],
@@ -63,11 +65,13 @@ class _AdminLogbookCarListState extends State<AdminLogbookCarList> {
                           carListLabel: "Car Type",
                           carListLabelData: "Kia Sonet",
                         alignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                       ),
                       AdminCarListLabel(
                           carListLabel: "Car Department",
                           carListLabelData: widget.appBarTitle,
                         alignment: MainAxisAlignment.end,
+                        crossAxisAlignment: CrossAxisAlignment.end,
                       ),
 
                     ],
@@ -84,6 +88,7 @@ class _AdminLogbookCarListState extends State<AdminLogbookCarList> {
                           carListLabel: "Mobile No",
                           carListLabelData: "8141934349",
                         alignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                       ),
                       Material(
                         color: adminAppbarColor.withOpacity(0.7),
