@@ -54,7 +54,9 @@ class _AdminLogbookState extends State<AdminLogbook> {
             itemBuilder: (context, index) {
           return InkWell(
             onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const AdminLogbookCarList()));
+              Navigator.push(context, MaterialPageRoute(builder: (context)=> AdminLogbookCarList(
+                appBarTitle: departmentList[index].toString(),
+              )));
             },
             child: Container(
               margin: const EdgeInsets.all(8.0),

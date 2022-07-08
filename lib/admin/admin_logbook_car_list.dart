@@ -5,7 +5,11 @@ import 'package:sejaltravels_2022/components/custom_raised_button.dart';
 import 'package:sejaltravels_2022/const/const.dart';
 
 class AdminLogbookCarList extends StatefulWidget {
-  const AdminLogbookCarList({Key? key}) : super(key: key);
+
+  String appBarTitle;
+
+
+  AdminLogbookCarList({required this.appBarTitle});
 
   @override
   State<AdminLogbookCarList> createState() => _AdminLogbookCarListState();
@@ -19,18 +23,18 @@ class _AdminLogbookCarListState extends State<AdminLogbookCarList> {
     return Scaffold(
       backgroundColor: bgColor,
       appBar: AppBar(
-        title: Text('Car List'),
+        title: Text(widget.appBarTitle),
         centerTitle: true,
         elevation: 0.0,
         backgroundColor: adminAppbarColor,
       ),
       body: ListView.builder(
           itemCount: 5,
-          padding: EdgeInsets.all(8.0),
+          padding: const EdgeInsets.all(8.0),
           itemBuilder: (context, index) {
             return Container(
-              margin: EdgeInsets.all(8.0),
-              padding: EdgeInsets.all(8.0),
+              margin: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(8.0),
               decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(5.0)),
@@ -62,14 +66,14 @@ class _AdminLogbookCarListState extends State<AdminLogbookCarList> {
                       ),
                       AdminCarListLabel(
                           carListLabel: "Car Department",
-                          carListLabelData: "MFF",
+                          carListLabelData: widget.appBarTitle,
                         alignment: MainAxisAlignment.end,
                       ),
 
                     ],
                   ),
                   Row(
-                    children: [
+                    children: const [
 
                     ],
                   ),
@@ -82,22 +86,22 @@ class _AdminLogbookCarListState extends State<AdminLogbookCarList> {
                         alignment: MainAxisAlignment.start,
                       ),
                       Material(
-                        color: Colors.grey.withOpacity(0.5),
+                        color: adminAppbarColor.withOpacity(0.7),
                         borderRadius: BorderRadius.circular(5.0),
                         child: InkWell(
                           onTap: (){},
                           splashColor: Colors.black,
                           borderRadius: BorderRadius.circular(5.0),
                           child: Container(
-                            padding: EdgeInsets.all(8.0),
+                            padding: const EdgeInsets.all(8.0),
                             child: Row(
                               mainAxisSize: MainAxisSize.min,
-                              children: [
+                              children: const [
                                 Padding(
-                                  padding: const EdgeInsets.only(right: 8.0),
-                                  child: Icon(FontAwesomeIcons.bookOpen,size: 16,),
+                                  padding:  EdgeInsets.only(right: 8.0),
+                                  child: Icon(FontAwesomeIcons.bookOpen,size: 16,color: Colors.white,),
                                 ),
-                                Text("Check Logbook"),
+                                Text("Check Logbook",style: TextStyle(color: Colors.white,),),
                               ],
                             ),
                           ),
