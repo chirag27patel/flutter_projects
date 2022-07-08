@@ -35,36 +35,52 @@ class _AdminLogbookCarListState extends State<AdminLogbookCarList> {
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(5.0)),
               child: Column(
+
                 children: [
                   Row(
+
                     children: [
                       AdminCarListLabel(
                           carListLabel: "Car Owner",
-                          carListLabelData: "Chirag Patel"),
+                          carListLabelData: "Chirag Patel",
+                          alignment: MainAxisAlignment.start,
+                      ),
                       AdminCarListLabel(
                           carListLabel: "Car Number",
-                          carListLabelData: "GJ-21-CC-8884"),
-                      AdminCarListLabel(
-                          carListLabel: "Car Type",
-                          carListLabelData: "Kia Sonet"),
+                          carListLabelData: "GJ-21-CC-8884",
+                        alignment: MainAxisAlignment.end,
+                      ),
+
                     ],
                   ),
                   Row(
                     children: [
                       AdminCarListLabel(
                           carListLabel: "Car Type",
-                          carListLabelData: "Kia Sonet"),
+                          carListLabelData: "Kia Sonet",
+                        alignment: MainAxisAlignment.start,
+                      ),
                       AdminCarListLabel(
                           carListLabel: "Car Department",
-                          carListLabelData: "MFF"),
-                      AdminCarListLabel(
-                          carListLabel: "Mobile No",
-                          carListLabelData: "8141934349"),
+                          carListLabelData: "MFF",
+                        alignment: MainAxisAlignment.end,
+                      ),
+
                     ],
                   ),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
                     children: [
+
+                    ],
+                  ),
+                  Row(
+
+                    children: [
+                      AdminCarListLabel(
+                          carListLabel: "Mobile No",
+                          carListLabelData: "8141934349",
+                        alignment: MainAxisAlignment.start,
+                      ),
                       Material(
                         color: Colors.grey.withOpacity(0.5),
                         borderRadius: BorderRadius.circular(5.0),

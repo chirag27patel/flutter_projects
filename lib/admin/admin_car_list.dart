@@ -69,21 +69,29 @@ class AdminCarList extends StatelessWidget {
                           AdminCarListLabel(
                               carListLabel: "Car Owner",
                               carListLabelData:
-                                  carDetailsData[index].ownerName),
+                                  carDetailsData[index].ownerName,
+                            alignment: MainAxisAlignment.start,
+                          ),
                           AdminCarListLabel(
-                              carListLabel: "Car No.",
+                              carListLabel: "Car Number",
                               carListLabelData:
-                                  carDetailsData[index].carNumber),
+                                  carDetailsData[index].carNumber,
+                            alignment: MainAxisAlignment.end,
+                          ),
                         ],
                       ),
                       Row(
                         children: [
                           AdminCarListLabel(
                               carListLabel: "Car Type",
-                              carListLabelData: carDetailsData[index].carType),
+                              carListLabelData: carDetailsData[index].carType,
+                            alignment: MainAxisAlignment.start,
+                          ),
                           AdminCarListLabel(
                               carListLabel: "Duty Type",
-                              carListLabelData: carDetailsData[index].dutyType),
+                              carListLabelData: carDetailsData[index].dutyType,
+                            alignment: MainAxisAlignment.end,
+                          ),
                         ],
                       ),
                       Row(
@@ -91,11 +99,15 @@ class AdminCarList extends StatelessWidget {
                           AdminCarListLabel(
                               carListLabel: "Driver Name",
                               carListLabelData:
-                                  carDetailsData[index].driverName),
+                                  carDetailsData[index].driverName,
+                            alignment: MainAxisAlignment.start,
+                          ),
                           AdminCarListLabel(
                               carListLabel: "Contact No",
                               carListLabelData:
-                                  carDetailsData[index].contactNo),
+                                  carDetailsData[index].contactNo,
+                            alignment: MainAxisAlignment.end,
+                          ),
                         ],
                       ),
                       Padding(
@@ -144,10 +156,12 @@ class AdminCarList extends StatelessWidget {
 
 class AdminCarListLabel extends StatelessWidget {
   AdminCarListLabel(
-      {required this.carListLabel, required this.carListLabelData});
+      {required this.carListLabel, required this.carListLabelData, required this.alignment});
 
   String carListLabel;
   String carListLabelData;
+  MainAxisAlignment alignment;
+
 
   @override
   Widget build(BuildContext context) {
@@ -158,16 +172,21 @@ class AdminCarListLabel extends StatelessWidget {
           top: 5,
           bottom: 5,
         ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
+        child: Row(
+          mainAxisAlignment: alignment,
           children: [
-            Text(
-              carListLabel,
-              style: TextStyle(fontSize: 14, color: textColor),
-            ),
-            Text(
-              carListLabelData,
-              style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  carListLabel,
+                  style: TextStyle(fontSize: 16, color: textColor),
+                ),
+                Text(
+                  carListLabelData,
+                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+                ),
+              ],
             ),
           ],
         ),
