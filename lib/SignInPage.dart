@@ -11,9 +11,16 @@ class SignInPage extends StatefulWidget {
   _SignInPageState createState() => _SignInPageState();
 }
 
-class _SignInPageState extends State<SignInPage> {
+class _SignInPageState extends State<SignInPage>
+    with SingleTickerProviderStateMixin {
+
+
   final TextEditingController loginIdController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+
+  late Animation _animation;
+  late AnimationController _animationController;
+
   bool isButtonEnabled = true;
 
   final snackBar = SnackBar(
@@ -21,10 +28,36 @@ class _SignInPageState extends State<SignInPage> {
     action: SnackBarAction(
       label: 'OK',
       onPressed: () {
-        // Some code to undo the change.
+
       },
     ),
   );
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 2),
+    );
+
+    _animation =
+        CurvedAnimation(parent: _animationController, curve: Curves.elasticOut);
+    _animationController.forward();
+
+    _animation.addListener(() {
+      setState(() {});
+    });
+  }
+
+
+  @override
+  void dispose() {
+    _animationController.dispose(); // you need this
+    super.dispose();
+  }
+
 
   void singInFunction() {}
 
@@ -44,10 +77,22 @@ class _SignInPageState extends State<SignInPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset("assets/images/sejallogo.png",height: 60,width: 60,),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20,vertical: 20),
-                child: Text("Sejal Travels", style: TextStyle(fontSize: 42,fontWeight: FontWeight.bold,fontFamily: "playfair",letterSpacing: 0.5),),
+              Image.asset(
+                "assets/images/sejallogo.png",
+                height: _animation.value * 60,
+                width: _animation.value * 60,
+              ),
+              const Padding(
+                padding:
+                    EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                child: Text(
+                  "Sejal Travels",
+                  style: TextStyle(
+                      fontSize: 42,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: "playfair",
+                      letterSpacing: 0.5),
+                ),
               )
             ],
           ),
@@ -130,16 +175,16 @@ class _SignInPageState extends State<SignInPage> {
                     style: TextStyle(fontSize: 16, color: textColor),
                   ),
                 ),
-               InkWell(
-                 onTap: (){},
-                 child:const Text(
-                   "Click here",
-                   style:  TextStyle(
-                       fontSize: 16,
-                       color: LabelColor,
-                       fontWeight: FontWeight.bold),
-                 ),
-               )
+                InkWell(
+                  onTap: () {},
+                  child: const Text(
+                    "Click here",
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: LabelColor,
+                        fontWeight: FontWeight.bold),
+                  ),
+                )
               ],
             ),
           ),
