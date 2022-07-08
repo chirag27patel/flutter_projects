@@ -81,6 +81,7 @@ class _AdminLogbookState extends State<AdminLogbook> {
                   Container(
                     height: 50,
                     width: 50,
+                    margin: EdgeInsets.all(8.0),
                     alignment: Alignment.center,
                     decoration: const BoxDecoration(
                         color: adminAppbarColor, shape: BoxShape.circle),
